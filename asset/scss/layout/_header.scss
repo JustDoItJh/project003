@@ -1,0 +1,106 @@
+.header {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    z-index: 99;
+    display: block;
+    width: 100%;
+    height: 44px;
+    background: #fdfdfd;
+
+    .gnb-area {
+        position: relative;
+        margin: 0 auto;
+        padding: 0 100px;
+        background: #323232;
+        color: #f5f5f7;
+
+        .gnb-list {
+            display: flex;
+            justify-content: space-between;
+            line-height: 44px;
+
+            .gnb-item {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                opacity: 0.8;
+
+                .link-gnb {
+                    font-size: 12px;
+                    font-weight: 100;
+                }
+            }
+
+            .logo {
+                background-image: url(../images/logo.png);
+                background-size: 14px 44px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 14px;
+            }
+            .search {
+                background-image: url(../images/search.png);
+                background-size: 15px 88px;
+                background-repeat: no-repeat;
+                width: 15px;
+            }
+            .cart {
+                background-image: url(../images/cart.png);
+                background-size: 13px 44px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 13px;
+            }
+        }
+    }
+
+    .lnb-area {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        height: 52px;
+        line-height: 52px;
+        padding: 0 100px;
+        border-bottom: 1px solid #ddd;
+        background: #fdfdfd;
+
+        .title {
+            font-size: 21px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .menu-area {
+            font-size: 11px;
+            font-weight: 400;
+            .menu-list {
+                display: flex;
+                justify-content: space-between;
+                .menu-item {
+                    margin-right: 20px;
+                    opacity: .85;
+                    &:first-child {
+                        opacity: 0.5;
+                    }
+                    .active:hover {
+                        color: #06c;
+                    }
+                    .link-buy {
+                        cursor: pointer;
+                        display: inline-block;
+                        text-align: center;
+                        white-space: nowrap;
+                        background: #0071e3;
+                        color: #fff;
+                        border-radius: 980px;
+                        line-height: 1.5;
+                        font-weight: 400;
+                        padding: 4px 11px;
+                        margin-right: -20px;                                            
+                    }
+                }
+            }
+        }
+    }
+}
