@@ -1,5 +1,9 @@
 .main-content {
+    position: relative;
     padding-top: 150px;
+    max-width: 67%;
+    margin: 0 auto;
+    z-index: 2;
     .main-logo {
         font-size: 40px;
         font-weight: 600;
@@ -10,15 +14,15 @@
         margin: 10px 0;
     }
     .desc {
-        width: 53%;
         margin: 0 auto;
-        font-size: 21px;
+        font-size: 20px;
         line-height: 1.8;
+        letter-spacing: .001em;
     }
-    .link {
+    .link-video{
         display: inline-block;
         margin: 20px 0;
-        font-size: 21px;
+        font-size: 20px;
         font-weight: 400;
         color: #06c;
         &>span:hover {
@@ -32,6 +36,20 @@
             padding: 4px;
             margin-left: 8px;
             vertical-align: middle;
+        }
+    }
+    .link {
+        display: inline-block;
+        margin: 30px 0;
+        font-size: 21px;
+        font-weight: 400;
+        color: #06c;
+        &>span:hover {
+            text-decoration: underline;
+        }
+        &::after {
+            content: ">";
+            margin-left: 8px;
         }
     }
 }

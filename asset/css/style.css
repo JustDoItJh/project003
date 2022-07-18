@@ -62,6 +62,7 @@ body {
   font-weight: 400;
   color: #1d1d1f;
   background: #fff;
+  word-break: keep-all;
 }
 
 *,
@@ -195,6 +196,10 @@ textarea::-webkit-outer-spin-button {
   margin: -1px;
 }
 
+sup {
+  font-size: small;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -258,7 +263,9 @@ textarea::-webkit-outer-spin-button {
   line-height: 52px;
   padding: 0 100px;
   border-bottom: 1px solid #ddd;
-  background: #fdfdfd;
+  background: rgba(250, 250, 250, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 .header .lnb-area .title {
   font-size: 21px;
@@ -298,7 +305,11 @@ textarea::-webkit-outer-spin-button {
 }
 
 .main-content {
+  position: relative;
   padding-top: 150px;
+  max-width: 67%;
+  margin: 0 auto;
+  z-index: 2;
 }
 .main-content .main-logo {
   font-size: 40px;
@@ -310,14 +321,33 @@ textarea::-webkit-outer-spin-button {
   margin: 10px 0;
 }
 .main-content .desc {
-  width: 53%;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.8;
+  letter-spacing: 0.001em;
+}
+.main-content .link-video {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #06c;
+}
+.main-content .link-video > span:hover {
+  text-decoration: underline;
+}
+.main-content .link-video::after {
+  content: "▶";
+  font-size: 2px;
+  border-radius: 100%;
+  border: 1px solid #06c;
+  padding: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 .main-content .link {
   display: inline-block;
-  margin: 20px 0;
+  margin: 30px 0;
   font-size: 21px;
   font-weight: 400;
   color: #06c;
@@ -326,13 +356,8 @@ textarea::-webkit-outer-spin-button {
   text-decoration: underline;
 }
 .main-content .link::after {
-  content: "▶";
-  font-size: 2px;
-  border-radius: 100%;
-  border: 1px solid #06c;
-  padding: 4px;
+  content: ">";
   margin-left: 8px;
-  vertical-align: middle;
 }
 
 .main {
@@ -344,4 +369,138 @@ textarea::-webkit-outer-spin-button {
   position: relative;
   margin: 0 auto;
   background: #f8f8f8;
+}
+.sc-intro .image-wrap {
+  position: relative;
+  left: 50%;
+  background-image: url(../images/main.jpg);
+  background-repeat: no-repeat;
+  width: 2560px;
+  height: 618px;
+  margin-left: -1250px;
+  margin-top: -60px;
+}
+
+.sc-wireless {
+  position: relative;
+  margin: 0 auto;
+  background: #000;
+  color: #f5f5f5;
+}
+.sc-wireless .image-wrap {
+  position: relative;
+  left: 50%;
+  background-image: url(../images/wireless.jpg);
+  background-repeat: no-repeat;
+  margin-left: -1280px;
+  margin-top: -350px;
+  width: 2560px;
+  height: 1951px;
+  z-index: 1;
+}
+.sc-wireless .sub-content {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  max-width: 60%;
+}
+.sc-wireless .sub-content img {
+  margin: 0 auto;
+}
+.sc-wireless .sub-content .sub-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 15px 0 10px;
+}
+.sc-wireless .sub-content .desc {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.sc-wireless .sub-content .func-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.sc-wireless .sub-content .func-list .func-item .wireless-icon {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  margin-bottom: 5px;
+}
+.sc-wireless .sub-content .func-list .func-item .ic-phone {
+  background-image: url(../images/ic_phone.png);
+  width: 35px;
+  height: 43px;
+}
+.sc-wireless .sub-content .func-list .func-item .ic-music {
+  background-image: url(../images/ic_music.png);
+  width: 29px;
+  height: 43px;
+}
+.sc-wireless .sub-content .func-list .func-item .ic-volume {
+  background-image: url(../images/ic_volume.png);
+  width: 42px;
+  height: 43px;
+}
+.sc-wireless .sub-content .func-list .func-item .ic-map {
+  background-image: url(../images/ic_map.png);
+  width: 25px;
+  height: 43px;
+}
+
+.sc-performance {
+  position: relative;
+  background: #fafafa;
+  padding-bottom: 50px;
+}
+.sc-performance .sub-content {
+  padding: 50px 0 100px;
+}
+.sc-performance .sub-content .image-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+.sc-performance .sub-content .image-wrap .image-left {
+  width: 449px;
+  height: 996px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.sc-performance .sub-content .image-wrap .image-right {
+  width: 392px;
+  height: 993px;
+  margin-top: 0;
+  margin-right: 72px;
+}
+.sc-performance .sub-content .image-wrap .image-caption {
+  position: absolute;
+}
+.sc-performance .sub-content .image-wrap .image-caption .left-caption, .sc-performance .sub-content .image-wrap .image-caption .right-caption {
+  position: absolute;
+  text-align: left;
+  top: 558px;
+  width: 230px;
+  z-index: 2;
+  right: 200px;
+}
+.sc-performance .sub-content .image-wrap .image-caption .left-caption strong, .sc-performance .sub-content .image-wrap .image-caption .right-caption strong {
+  font-weight: 600;
+}
+.sc-performance .sub-content .image-wrap .image-caption .left-caption p, .sc-performance .sub-content .image-wrap .image-caption .right-caption p {
+  margin-top: 15px;
+  line-height: 1.8;
+  font-size: 12px;
+}
+.sc-performance .sub-content .image-wrap .image-caption .left-caption {
+  right: 200px;
+}
+.sc-performance .sub-content .image-wrap .image-caption .right-caption {
+  left: 230px;
 }

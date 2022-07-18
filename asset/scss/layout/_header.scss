@@ -63,7 +63,8 @@
         line-height: 52px;
         padding: 0 100px;
         border-bottom: 1px solid #ddd;
-        background: #fdfdfd;
+        background: rgba(250, 250, 250, 0.5);
+        backdrop-filter: blur(20px); // 자신이 아닌 배경에 필터효과 적용
 
         .title {
             font-size: 21px;

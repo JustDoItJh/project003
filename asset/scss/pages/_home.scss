@@ -3,10 +3,176 @@
     text-align: center;
 }
 
+// --------------------------- sc-intro ----------------------------
 .sc-intro {
     position: relative;
     margin: 0 auto;
     background: #f8f8f8;
     
-    .main-content {}
+    .image-wrap {
+        position: relative;
+        left: 50%;
+        background-image: url(../images/main.jpg);
+        background-repeat: no-repeat;
+        width: 2560px; height: 618px;
+        margin-left: -1250px;
+        margin-top: -60px;
+    }
+    
 }
+
+
+// --------------------------- sc-wireless ----------------------------
+.sc-wireless {
+    position: relative;
+    margin: 0 auto;
+    background: #000;
+    color: #f5f5f5;
+    
+    .image-wrap {
+        position: relative;
+        left: 50%;
+        background-image: url(../images/wireless.jpg);
+        background-repeat: no-repeat;
+        margin-left: -1280px;
+        margin-top: -350px;
+        width: 2560px; height: 1951px;
+        z-index: 1;
+    }
+    .sub-content {
+        position: absolute;
+        top: 80%; left: 50%; transform: translate(-50%, -50%);
+        z-index: 1;
+        max-width: 60%;
+        img {margin: 0 auto;}
+
+        .sub-title {
+            font-size: 48px;
+            font-weight: 600;
+            margin: 15px 0 10px;
+        }
+        .desc {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .func-list {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            .func-item {
+                .wireless-icon {
+                    position: relative;
+                    display: block;
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    margin-bottom: 5px;
+                }
+                .ic-phone {
+                    background-image: url(../images/ic_phone.png);
+                    width: 35px; height: 43px;
+                }
+                .ic-music {
+                    background-image: url(../images/ic_music.png);
+                    width: 29px; height: 43px;
+                }
+                .ic-volume {
+                    background-image: url(../images/ic_volume.png);
+                    width: 42px; height: 43px;
+                }
+                .ic-map {
+                    background-image: url(../images/ic_map.png);
+                    width: 25px; height: 43px;
+                }
+            }
+        }
+    }
+}
+
+
+// --------------------------- sc-performance ----------------------------
+.sc-performance {
+    position: relative;
+    background: #fafafa;
+    padding-bottom: 50px;
+    .sub-content {
+        padding: 50px 0 100px;
+        .image-wrap {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+
+            .image-left {
+                width: 449px; height: 996px;
+                margin-top: 30px;
+                margin-left: 40px;
+            }
+            .image-right {
+                width: 392px; height: 993px;
+                margin-top: 0;
+                margin-right: 72px;
+            }
+
+            .image-caption {
+                position: absolute;
+                
+                .left-caption, .right-caption {
+                    position: absolute;
+                    text-align: left;
+                    top: 558px;
+                    width: 230px;
+                    z-index: 2;
+                    right: 200px;
+                    strong { font-weight: 600; }
+                    p {margin-top: 15px; line-height: 1.8; font-size: 12px;}
+                }
+                .left-caption { right: 200px; }
+                .right-caption { left: 230px; }
+            }
+        }
+    }
+}
+
+
+// --------------------------- sc-charge ----------------------------
+
+
+
+// --------------------------- sc-battery ----------------------------
+.sc-battery {
+    
+}
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
+
+
+
+// --------------------------- sc-intro ----------------------------
