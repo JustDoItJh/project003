@@ -60,6 +60,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Lato", "Noto Sans KR", sans-serif;
   font-weight: 400;
+  letter-spacing: 0.001em;
   color: #1d1d1f;
   background: #fff;
   word-break: keep-all;
@@ -200,6 +201,19 @@ sup {
   font-size: small;
 }
 
+.link-buy {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  background: #0071e3;
+  color: #fff;
+  border-radius: 980px;
+  line-height: 1.5;
+  font-weight: 400;
+  padding: 4px 11px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -291,23 +305,13 @@ sup {
   color: #06c;
 }
 .header .lnb-area .menu-area .menu-list .menu-item .link-buy {
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  background: #0071e3;
-  color: #fff;
-  border-radius: 980px;
-  line-height: 1.5;
-  font-weight: 400;
-  padding: 4px 11px;
   margin-right: -20px;
 }
 
 .main-content {
   position: relative;
-  padding-top: 150px;
-  max-width: 67%;
+  padding-top: 100px;
+  max-width: 55%;
   margin: 0 auto;
   z-index: 2;
 }
@@ -357,7 +361,57 @@ sup {
 }
 .main-content .link::after {
   content: ">";
-  margin-left: 8px;
+}
+
+.column {
+  flex: 1;
+}
+.column .product-area {
+  width: 210px;
+  height: 480px;
+  border-bottom: 1px solid #ddd;
+}
+.column .product-area .image-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  width: 210px;
+  height: 235px;
+}
+.column .product-area .info-box {
+  padding-top: 50px;
+  width: 210px;
+  margin: 0 auto;
+}
+.column .product-area .info-box .title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.column .product-area .info-box .title .sub-title {
+  display: block;
+  height: 21px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.column .product-area .info-box .price {
+  display: block;
+  font-size: 17px;
+  margin: 10px 0 15px;
+}
+.column .product-area .info-box .link-buy {
+  font-size: 11px;
+}
+.column .product-area .info-box .link {
+  display: block;
+  font-size: 12px;
+  margin-top: 15px;
+}
+.column .info-area .info-item {
+  height: 91px;
+}
+.column .info-area .info-item .text {
+  font-size: 13px;
 }
 
 .main {
@@ -390,9 +444,9 @@ sup {
 .sc-wireless .image-wrap {
   position: relative;
   left: 50%;
+  transform: translateX(-50%);
   background-image: url(../images/wireless.jpg);
   background-repeat: no-repeat;
-  margin-left: -1280px;
   margin-top: -350px;
   width: 2560px;
   height: 1951px;
@@ -456,6 +510,9 @@ sup {
   background: #fafafa;
   padding-bottom: 50px;
 }
+.sc-performance .main-content {
+  max-width: 67%;
+}
 .sc-performance .sub-content {
   padding: 50px 0 100px;
 }
@@ -503,4 +560,187 @@ sup {
 }
 .sc-performance .sub-content .image-wrap .image-caption .right-caption {
   left: 230px;
+}
+
+.sc-charge .main-content {
+  max-width: 67%;
+}
+
+.sc-battery {
+  position: relative;
+}
+.sc-battery .main-content {
+  max-width: 67%;
+}
+.sc-battery .func-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 40%;
+  margin-top: 30px;
+  z-index: 2;
+}
+.sc-battery .func-list .func-item {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.sc-battery .func-list .func-item .text-large {
+  line-height: 1.1;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -0.08em;
+}
+.sc-battery .func-list .func-item .text-large .text-medium {
+  font-size: 32px;
+  font-weight: 500;
+}
+.sc-battery .image-wrap {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../images/battery.jpg);
+  background-repeat: no-repeat;
+  width: 2560px;
+  height: 1078px;
+  margin-top: -100px;
+}
+
+.sc-connect .main-content {
+  max-width: 67%;
+}
+.sc-connect .image-wrap {
+  position: relative;
+  left: 50%;
+  transform: translateX(-48%);
+  background-image: url(../images/connect.jpg);
+  background-repeat: no-repeat;
+  width: 564px;
+  height: 628px;
+  margin-top: 50px;
+}
+
+.sc-share .main-content {
+  max-width: 47%;
+}
+.sc-share .image-wrap {
+  position: relative;
+  left: 50%;
+  transform: translateX(-48%);
+  background-image: url(../images/share.jpg);
+  background-repeat: no-repeat;
+  width: 940px;
+  height: 782px;
+  margin-top: 50px;
+}
+
+.sc-design {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.sc-design .main-content {
+  background: #fafafa;
+  margin: 0 20px 20px 20px;
+  max-width: 100%;
+  padding: 60px 0 60px 60px;
+}
+.sc-design .main-content .inner {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1135px;
+}
+.sc-design .main-content .text-area {
+  width: 400px;
+  margin-right: 20px;
+}
+.sc-design .main-content .text-area .main-title {
+  font-size: 42px;
+}
+.sc-design .main-content .text-area .desc {
+  width: 70%;
+}
+.sc-design .main-content .image-wrap {
+  position: relative;
+  background-image: url(../images/design.png);
+  background-repeat: no-repeat;
+  width: 637px;
+  height: 289px;
+  margin-top: 20px;
+}
+
+.sc-music {
+  overflow: hidden;
+}
+.sc-music .main-content {
+  background: #fafafa;
+  margin: 0 20px 20px 20px;
+  max-width: 100%;
+  padding: 60px 0 60px 60px;
+}
+.sc-music .main-content .inner {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1135px;
+}
+.sc-music .main-content .text-area {
+  width: 370px;
+  padding: 55px 0 35px;
+}
+.sc-music .main-content .text-area em {
+  font-size: 32px;
+  font-weight: 600;
+}
+.sc-music .main-content .text-area .main-title {
+  font-size: 42px;
+}
+.sc-music .main-content .image-wrap {
+  width: 60%;
+  position: relative;
+}
+.sc-music .main-content .image-wrap .music1 {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.sc-music .main-content .image-wrap .music2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sc-music .main-content .image-wrap .music3 {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  z-index: 2;
+}
+.sc-music .main-content .image-wrap .music4 {
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  z-index: 2;
+}
+
+.sc-recommend {
+  padding: 50px 0 50px;
+  overflow: hidden;
+}
+.sc-recommend .main-content {
+  max-width: 100%;
+}
+.sc-recommend .main-content .rec-title {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 600;
+}
+.sc-recommend .main-content .group-inner {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }

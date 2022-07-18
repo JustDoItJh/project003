@@ -11,3 +11,16 @@
 sup {
     font-size: small;
 }
+
+.link-buy {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    background: #0071e3;
+    color: #fff;
+    border-radius: 980px;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: 4px 11px;                                         
+}

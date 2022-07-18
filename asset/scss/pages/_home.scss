@@ -31,10 +31,10 @@
     
     .image-wrap {
         position: relative;
-        left: 50%;
+        left: 50%; transform: translateX(-50%);
         background-image: url(../images/wireless.jpg);
         background-repeat: no-repeat;
-        margin-left: -1280px;
+        
         margin-top: -350px;
         width: 2560px; height: 1951px;
         z-index: 1;
@@ -95,6 +95,9 @@
     position: relative;
     background: #fafafa;
     padding-bottom: 50px;
+    .main-content {
+        max-width: 67%;
+    }
     .sub-content {
         padding: 50px 0 100px;
         .image-wrap {
@@ -138,41 +141,193 @@
 
 
 // --------------------------- sc-charge ----------------------------
-
+.sc-charge {
+    .main-content {
+        max-width: 67%;
+    }
+}
 
 
 // --------------------------- sc-battery ----------------------------
 .sc-battery {
-    
+    position: relative;
+    .main-content {
+        max-width: 67%;
+    }
+    .func-list {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 40%;
+        margin-top: 30px;
+        z-index: 2;
+        
+        .func-item {
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            .text-large {
+                line-height: 1.1;
+                font-size: 48px;
+                font-weight: 400;
+                letter-spacing: -0.08em;
+                .text-medium {
+                    font-size: 32px; 
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .image-wrap {
+        position: relative;
+        left: 50%; transform: translateX(-50%);
+        background-image: url(../images/battery.jpg);
+        background-repeat: no-repeat;
+        width: 2560px; height: 1078px;
+        margin-top: -100px;
+    }
 }
 
 
-// --------------------------- sc-intro ----------------------------
+// --------------------------- sc-connect ----------------------------
+.sc-connect {
+    .main-content {
+        max-width: 67%;
+    }
+    .image-wrap {
+        position: relative;
+        left: 50%; transform: translateX(-48%);
+        background-image: url(../images/connect.jpg);
+        background-repeat: no-repeat;
+        width: 564px; height: 628px;
+        margin-top: 50px;
+    }
+}
 
 
-
-// --------------------------- sc-intro ----------------------------
-
-
-
-// --------------------------- sc-intro ----------------------------
-
-
-
-// --------------------------- sc-intro ----------------------------
-
-
-
-// --------------------------- sc-intro ----------------------------
-
-
-
-// --------------------------- sc-intro ----------------------------
+// --------------------------- sc-share ----------------------------
+.sc-share {
+    .main-content {
+        max-width: 47%;
+    }
+    .image-wrap {
+        position: relative;
+        left: 50%; transform: translateX(-48%);
+        background-image: url(../images/share.jpg);
+        background-repeat: no-repeat;
+        width: 940px; height: 782px;
+        margin-top: 50px;
+    }
+}
 
 
+// --------------------------- sc-design ----------------------------
+.sc-design {
+    overflow: hidden;
+    margin-bottom: 20px;
+    .main-content {
+        background: #fafafa;
+        margin: 0 20px 20px 20px;
+        max-width: 100%;
+        padding: 60px 0 60px 60px;
+        .inner {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 1135px;
+        }
+        .text-area {
+            width: 400px;
+            margin-right: 20px;
+            .main-title {font-size: 42px;}
+            .desc {width: 70%;}
+        }
+        .image-wrap {
+            position: relative;
+            background-image: url(../images/design.png);
+            background-repeat: no-repeat;
+            width: 637px; height: 289px;
+            margin-top: 20px;
+        }
+    }
+}
 
-// --------------------------- sc-intro ----------------------------
+
+// --------------------------- sc-music ----------------------------
+.sc-music {
+    overflow: hidden;
+    
+    .main-content {
+        background: #fafafa;
+        margin: 0 20px 20px 20px;
+        max-width: 100%;
+        padding: 60px 0 60px 60px;
+        .inner {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 1135px;
+        }
+        .text-area {
+            width: 370px;
+            padding: 55px 0 35px;
+            em {
+                font-size: 32px;
+                font-weight: 600;
+            }
+            .main-title {font-size: 42px;}
+        }
+        .image-wrap {
+            width: 60%;
+            position: relative;
+            .music1 {
+                position: absolute;
+                top: 58%; left: 50%; transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+            .music2 {
+                position: absolute;
+                left: 50%; transform: translateX(-50%);
+            }
+            .music3 {
+                position: absolute;
+                top: 50%; left: 8%;
+                z-index: 2;
+            }
+            .music4 {
+                position: absolute;
+                top: 20%; right: 8%;
+                z-index: 2;
+            }
+        }
+    }
+}
 
 
+// --------------------------- sc-recommend ----------------------------
+.sc-recommend {
+    padding: 50px 0 50px;
+    overflow: hidden;
 
-// --------------------------- sc-intro ----------------------------
+    .main-content {
+        max-width: 100%;
+        .rec-title {
+            font-size: 60px;
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        .group-inner {
+            width: 940px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+    }
+}
+
+
