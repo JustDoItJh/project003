@@ -6,7 +6,7 @@ $(function(){
     .then((response)  => response.json())
     .then((json) => {
   
-      const airpods2nd = json.recent;
+      const airpods2nd = json.airpods2nd;
       
       let airpods2ndhtml = '';
   
@@ -24,7 +24,7 @@ $(function(){
                                     <span class="value">${element.time}</span>
                                     <span class="sub-value">${element.infoTime} <sup><a href="#remark-16" class="remark">16</a></sup></span>
                                 </p>
-                            </li>`
+                            </li>`;
       });
   
       
