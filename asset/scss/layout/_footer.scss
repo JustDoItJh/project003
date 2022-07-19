@@ -1,0 +1,115 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background: #f5f5f7;
+    color: #6e6e73;
+}
+.footer-inner {
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    .service-area {
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    .service-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 50px;
+        .service-item {
+            margin: 0 auto;
+            position: relative;
+            flex: 1;
+            width: 216px;
+            padding-top: 50px;
+            .link-service {
+                display: block;
+                text-align: center;
+                letter-spacing: .012em;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin: 0 auto;
+                }
+                .title {
+                    font-size: 17px;
+                    font-weight: 500;
+                    margin-top: 10px;
+                    color: #1d1d1f;
+                }
+                .desc {
+                    font-size: 13px;
+                    margin-top: 5px;
+                    color: #1d1d1f;
+                }
+                .link {
+                    display: inline-block;
+                    margin: 15px 0;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #06c;
+                    &>span:hover {
+                        text-decoration: underline;
+                    }
+                    &::after {
+                        content: ">";
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .remark-area {
+        font-family: $font-en;
+        font-size: 11px;
+        line-height: 1.4;
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        .remark-00 { padding-bottom: 9px; }
+        ol {
+            padding: 0 15px;
+            li {padding-bottom: 8px;}
+        }
+    }
+
+    .breadcrump {
+        position: relative;
+        padding: 20px 0;
+        color: #424245;
+
+        &-list {
+            display: flex;
+
+        }
+        &-item {
+            .logo {
+                width: 14px; height: 18px;
+                display: block;
+                position: relative;
+                background-image: url(../images/logo_b.png);
+                background-repeat: no-repeat;
+            }
+            .link-breadcrump {
+                font-size: 12px;
+            }
+
+            &+.breadcrump-item::before {
+                content: '';
+                width: 8px; height: 18px;
+                background-image: url(../images/arrow.png);
+                background-repeat: no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: -5px;
+                margin: 0 8px;
+            }
+        }
+    }
+
+    .nav-area {
+        
+    }
+}

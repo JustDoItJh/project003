@@ -97,14 +97,37 @@
     }
 
     .info-area {
+        margin-top: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #ddd;
+        width: 210px;
         .info-list {}
         .info-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             height: 91px;
+            margin-top: 50px;
 
-            .text {
-                font-size: 13px;
+            .set-img-box {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
             }
-
+            .text {
+                padding-top: 10px;
+                font-size: 13px;
+                line-height: 1.2;
+                .value {
+                    font-size: 42px;
+                    font-weight: 500;
+                }
+                .sub-value {
+                    display: block;
+                }
+                sup {font-size: 10px;}
+            }
         }
     }
 }
