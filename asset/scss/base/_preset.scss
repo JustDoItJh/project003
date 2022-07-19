@@ -10,6 +10,9 @@
 
 sup {
     font-size: small;
+    &:hover {
+        color: #0071e3;
+    }
 }
 
 .link-buy {

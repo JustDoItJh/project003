@@ -6,6 +6,9 @@
     width: 100%;
     height: 44px;
     background: #fdfdfd;
+    transition-duration: 0.5s;
+    &.hide {transform: translateY(-45px);}
+    &.up {background: #fff;}
 
     .gnb-area {
         position: relative;
@@ -13,8 +16,10 @@
         padding: 0 100px;
         background: #323232;
         color: #f5f5f7;
-
+        
         .gnb-list {
+            max-width: 980px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             line-height: 44px;
@@ -24,6 +29,9 @@
                 display: inline-block;
                 vertical-align: top;
                 opacity: 0.8;
+                &:hover {
+                    opacity: 1;
+                }
 
                 .link-gnb {
                     font-size: 12px;
@@ -37,12 +45,14 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 width: 14px;
+                cursor: pointer;
             }
             .search {
                 background-image: url(../images/search.png);
                 background-size: 15px 88px;
                 background-repeat: no-repeat;
                 width: 15px;
+                cursor: pointer;
             }
             .cart {
                 background-image: url(../images/cart.png);
@@ -50,6 +60,7 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 width: 13px;
+                cursor: pointer;
             }
         }
     }
@@ -57,8 +68,6 @@
     .lnb-area {
         position: sticky;
         top: 0;
-        display: flex;
-        justify-content: space-between;
         height: 52px;
         line-height: 52px;
         padding: 0 100px;
@@ -66,29 +75,34 @@
         background: rgba(250, 250, 250, 0.5);
         backdrop-filter: blur(20px); // 자신이 아닌 배경에 필터효과 적용
 
-        .title {
-            font-size: 21px;
-            font-weight: 600;
-            display: block;
-        }
-
-        .menu-area {
-            font-size: 11px;
-            font-weight: 400;
-            .menu-list {
-                display: flex;
-                justify-content: space-between;
-                .menu-item {
-                    margin-right: 20px;
-                    opacity: .85;
-                    &:first-child {
-                        opacity: 0.5;
-                    }
-                    .active:hover {
-                        color: #06c;
-                    }
-                    .link-buy {
-                        margin-right: -20px;
+        .group-area {
+            display: flex;
+            justify-content: space-between;
+            max-width: 980px; margin: 0 auto;
+            .title {
+                font-size: 21px;
+                font-weight: 600;
+                display: block;
+            }
+    
+            .menu-area {
+                font-size: 11px;
+                font-weight: 400;
+                .menu-list {
+                    display: flex;
+                    justify-content: space-between;
+                    .menu-item {
+                        margin-right: 20px;
+                        opacity: .85;
+                        &:first-child {
+                            opacity: 0.5;
+                        }
+                        .active:hover {
+                            color: #06c;
+                        }
+                        .link-buy {
+                            margin-right: -20px;
+                        }
                     }
                 }
             }

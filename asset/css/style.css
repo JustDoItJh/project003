@@ -200,6 +200,9 @@ textarea::-webkit-outer-spin-button {
 sup {
   font-size: small;
 }
+sup:hover {
+  color: #0071e3;
+}
 
 .link-buy {
   cursor: pointer;
@@ -224,6 +227,13 @@ sup {
   width: 100%;
   height: 44px;
   background: #fdfdfd;
+  transition-duration: 0.5s;
+}
+.header.hide {
+  transform: translateY(-45px);
+}
+.header.up {
+  background: #fff;
 }
 .header .gnb-area {
   position: relative;
@@ -233,6 +243,8 @@ sup {
   color: #f5f5f7;
 }
 .header .gnb-area .gnb-list {
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   line-height: 44px;
@@ -242,6 +254,9 @@ sup {
   display: inline-block;
   vertical-align: top;
   opacity: 0.8;
+}
+.header .gnb-area .gnb-list .gnb-item:hover {
+  opacity: 1;
 }
 .header .gnb-area .gnb-list .gnb-item .link-gnb {
   font-size: 12px;
@@ -253,12 +268,14 @@ sup {
   background-repeat: no-repeat;
   background-position: center center;
   width: 14px;
+  cursor: pointer;
 }
 .header .gnb-area .gnb-list .search {
   background-image: url(../images/search.png);
   background-size: 15px 88px;
   background-repeat: no-repeat;
   width: 15px;
+  cursor: pointer;
 }
 .header .gnb-area .gnb-list .cart {
   background-image: url(../images/cart.png);
@@ -266,13 +283,12 @@ sup {
   background-repeat: no-repeat;
   background-position: center center;
   width: 13px;
+  cursor: pointer;
 }
 .header .lnb-area {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
   height: 52px;
   line-height: 52px;
   padding: 0 100px;
@@ -281,30 +297,36 @@ sup {
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
 }
-.header .lnb-area .title {
+.header .lnb-area .group-area {
+  display: flex;
+  justify-content: space-between;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.header .lnb-area .group-area .title {
   font-size: 21px;
   font-weight: 600;
   display: block;
 }
-.header .lnb-area .menu-area {
+.header .lnb-area .group-area .menu-area {
   font-size: 11px;
   font-weight: 400;
 }
-.header .lnb-area .menu-area .menu-list {
+.header .lnb-area .group-area .menu-area .menu-list {
   display: flex;
   justify-content: space-between;
 }
-.header .lnb-area .menu-area .menu-list .menu-item {
+.header .lnb-area .group-area .menu-area .menu-list .menu-item {
   margin-right: 20px;
   opacity: 0.85;
 }
-.header .lnb-area .menu-area .menu-list .menu-item:first-child {
+.header .lnb-area .group-area .menu-area .menu-list .menu-item:first-child {
   opacity: 0.5;
 }
-.header .lnb-area .menu-area .menu-list .menu-item .active:hover {
+.header .lnb-area .group-area .menu-area .menu-list .menu-item .active:hover {
   color: #06c;
 }
-.header .lnb-area .menu-area .menu-list .menu-item .link-buy {
+.header .lnb-area .group-area .menu-area .menu-list .menu-item .link-buy {
   margin-right: -20px;
 }
 
@@ -374,7 +396,7 @@ sup {
 .footer-inner .remark-area {
   font-family: "Lato", "Noto Sans KR", sans-serif;
   font-size: 11px;
-  line-height: 1.4;
+  line-height: 1.5;
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
 }
@@ -417,6 +439,64 @@ sup {
   margin-top: -5px;
   margin: 0 8px;
 }
+.footer-inner .nav-area {
+  font-size: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.footer-inner .nav-area .nav-wrap {
+  flex-basis: 20%;
+}
+.footer-inner .nav-area .nav-wrap .nav-box {
+  margin-bottom: 30px;
+}
+.footer-inner .nav-area .nav-wrap .nav-box .title {
+  color: #1d1d1d;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-inner .nav-area .nav-wrap .nav-box .nav-item {
+  margin-bottom: 8px;
+  color: #424245;
+}
+.footer-inner .nav-area .nav-wrap .nav-box .link-nav:hover {
+  text-decoration: underline;
+}
+.footer-inner .group-flex {
+  padding-top: 30px;
+  font-size: 11px;
+  color: #6e6e73;
+}
+.footer-inner .group-flex .row-top {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.footer-inner .group-flex .row-top a {
+  color: #06c;
+}
+.footer-inner .group-flex .row-bottom {
+  overflow: hidden;
+}
+.footer-inner .group-flex .row-bottom address {
+  float: left;
+  margin-right: 30px;
+}
+.footer-inner .group-flex .row-bottom .policy {
+  float: left;
+  position: relative;
+}
+.footer-inner .group-flex .row-bottom .policy .link-policy {
+  margin-right: 15px;
+  color: #424245;
+}
+.footer-inner .group-flex .row-bottom .policy .link-policy:hover {
+  text-decoration: underline;
+}
+.footer-inner .group-flex .row-bottom .region {
+  float: right;
+}
+
 .main-content {
   position: relative;
   padding-top: 100px;
@@ -554,6 +634,7 @@ sup {
 .main {
   margin-top: 96px;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .sc-intro {

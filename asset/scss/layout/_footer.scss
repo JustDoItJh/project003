@@ -65,7 +65,7 @@
     .remark-area {
         font-family: $font-en;
         font-size: 11px;
-        line-height: 1.4;
+        line-height: 1.5;
         padding: 20px 0;
         border-bottom: 1px solid #ddd;
         .remark-00 { padding-bottom: 9px; }
@@ -110,6 +110,57 @@
     }
 
     .nav-area {
-        
+        font-size: 12px;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .nav-wrap {
+            flex-basis: 20%;
+
+            .nav-box {
+                margin-bottom: 30px;
+                .title {
+                    color: #1d1d1d;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+                .nav-list {}
+                .nav-item {
+                    margin-bottom: 8px;
+                    color: #424245;
+                }
+                .link-nav:hover {text-decoration: underline;}
+            }
+        }
+    }
+
+    .group-flex {
+        padding-top: 30px;
+        font-size: 11px;
+        color: #6e6e73;
+
+        .row-top {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            a {color: #06c;}
+        }
+        .row-bottom {
+            overflow: hidden;
+            address {float: left; margin-right: 30px;}
+            .policy {
+                float: left;
+                position: relative;
+                .link-policy {
+                    margin-right: 15px;
+                    color: #424245;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                
+            }
+            .region {float: right;}
+        }
     }
 }
