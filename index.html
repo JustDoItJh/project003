@@ -14,69 +14,137 @@
         <!-- header -->
         <header class="header">
             <div class="gnb-area">
-                <!-- h1이 아닌 태그를 사용한 이유를 -->
-                <h1><a href="" class="logo"><span class="blind">Logo Home</span></a></h1>
-                
-                <ul class="gnb-list">
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">스토어</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">Mac</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">iPad</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">iPhone</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">Watch</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">AirPods</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">TV 및 홈</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">Apple 독점 제공</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">액세서리</span>
-                        </a>
-                    </li>
-                    <li class="gnb-item">
-                        <a href="" class="link-gnb">
-                            <span class="text">고객지원</span>
-                        </a>
-                    </li>
-                </ul>
-    
-                <div class="util-area">
-                    <a href="" class="link-gnb"><span class="blind">검색</span></a>
-                    <a href="" class="link-gnb"><span class="blind">장바구니</span></a>
+                <div class="gnb-wrap">
+                    <!-- h1이 아닌 태그를 사용한 이유를 -->
+                    <h1 class="logo"><a href="" class="link-logo"><span class="blind">Logo Home</span></a></h1>
+                    
+                    <ul class="gnb-list">
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">스토어</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">Mac</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">iPad</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">iPhone</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">Watch</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">AirPods</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">TV 및 홈</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">Apple 독점 제공</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">액세서리</span>
+                            </a>
+                        </li>
+                        <li class="gnb-item">
+                            <a href="" class="link-gnb">
+                                <span class="text">고객지원</span>
+                            </a>
+                        </li>
+                    </ul>
+        
+                    <!-- 반응형 HEADER -->
+                    <nav class="gnb-response">
+                        <!-- Toggle 메뉴 버튼 -->
+                        <input type="checkbox" id="trigger">
+                        <label for="trigger">
+                            <span></span>
+                            <span></span>
+                        </label>
+                        
+                        <!-- 버튼 클릭시 나타나는 사이드바 -->
+                        <div class="sidebar">
+                            <div class="search-area"></div>
+                            <ul class="gnb-list">
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">스토어</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">Mac</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">iPad</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">iPhone</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">Watch</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">AirPods</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">TV 및 홈</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">Apple 독점 제공</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">액세서리</span>
+                                    </a>
+                                </li>
+                                <li class="gnb-item">
+                                    <a href="" class="link-gnb">
+                                        <span class="text">고객지원</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="util-area">
+                        <a href="" class="link-search"><span class="blind">검색</span></a>
+                        <a href="" class="link-cart"><span class="blind">장바구니</span></a>
+                    </div>
+
                 </div>
-    
-    
             </div>
+
     
             <div class="lnb-area">
                 <div class="group-area">
@@ -119,7 +187,7 @@
                         <span>동영상 보기</span>
                     </a>
                 </div>
-                <div class="image-wrap"></div>
+                <figure class="image-wrap"></figure>
             </section>
     
             <!-- sc-wireless -->
@@ -128,7 +196,7 @@
                     <h2 class="main-title">진정한 의미의 무선.</h2>
                     <p class="desc">AirPods은 탭 한 번으로 간단하게 설정하기만 하면 자동으로 켜지고 언제나 연결을 유지합니다.<sup><a href="#remark-01" class="remark">1</a></sup> 사용도 그만큼 쉽죠. 각각의 이어폰이 귀에 꽂혔는지를 감지하기 때문에, 뺄 경우엔 재생을 일시 정지시키기도 하죠. 그리고 AirPods은 iPhone, Apple Watch, iPad, 또는 Apple TV까지, 어느 기기와 함께하든 항상 탁월한 경험을 선사합니다.</p>
                 </div>
-                <div class="image-wrap"></div>
+                <figure class="image-wrap"></figure>
                 <div class="sub-content">
                     <img src="./asset/images/wireless2.png" alt="의미없는 이미지">
                     <h3 class="sub-title">Siri는 오른팔.</h3>
@@ -162,8 +230,8 @@
                 </div>
                 <div class="sub-content">
                     <div class="image-wrap">
-                        <img src="./asset/images/performance_left.jpg" alt="" class="image-left">
-                        <img src="./asset/images/performance_right.jpg" alt="" class="image-right">
+                        <figure class="image-left"></figure>
+                        <figure class="image-right"></figure>
                         <div class="image-caption">
                             <div class="left-caption">
                                 <strong>언제 듣는지 알다.</strong>
@@ -219,7 +287,7 @@
                         <span class="text-small">15분 충전 시 <br> 최대 3시간 청취 가능</span>
                     </li>
                 </ul>
-                <div class="image-wrap"></div>
+                <figure class="image-wrap"></figure>
             </section>
     
             <!-- sc-connect -->
@@ -228,7 +296,7 @@
                     <h2 class="main-title">바로 설정하고, 손쉽게 듣고.</h2>
                     <p class="desc">AirPods은 iPhone, Apple Watch, Mac, iPad, Apple TV와 즉시 연결할 수 있습니다. 게다가 한 기기에서 다른 기기로 매끄럽게 전환하며 사용할 수도 있죠. 간단하게 설정만 해주면 신기로운 경험이 바로 펼쳐진답니다.</p>
                 </div>
-                <div class="image-wrap"></div>
+                <figure class="image-wrap"></figure>
             </section>
     
             <!-- sc-share -->
@@ -237,7 +305,7 @@
                     <h2 class="main-title">곡 하나도 함께 듣는 사이.</h2>
                     <p class="desc">‘오디오 공유’ 기능 <sup><a href="#remark-12" class="remark">12</a></sup> 덕분에 노래, 팟캐스트, 그 외 각종 오디오 스트리밍을 두 사람이 각자의 AirPods으로 동시에 들을 수 있습니다. 물론 음량 조절은 따로따로 되죠. AirPods이 케이스 안에 있다면, 공유받을 iPhone, iPad 가까이에 그대로 가져가기만 하세요. 탭 한 번이면 연결됩니다. 만약 AirPods을 귀에 꽂고 있다면, 연결된 iPhone을 공유받을 기기 가까이 가져가면 되죠.</p>
                 </div>
-                <div class="image-wrap"></div>
+                <figure class="image-wrap"></figure>
             </section>
     
             <!-- sc-design -->
@@ -245,13 +313,13 @@
                 <div class="main-content">
                     <div class="inner">
                         <div class="text-area">
-                            <h2 class="main-title">자신만의 이야기를 새기다.</h2>
-                            <p class="desc">AirPods을 위한 새로운 각인 옵션. <br> 글자, 이모티콘, 숫자 조합으로 더욱 개성 있게.</p>
+                            <h2 class="main-title">자신만의 이야기를 <br> 새기다.</h2>
+                            <p class="desc">AirPods을 위한 새로운 각인 옵션. <br> 글자, 이모티콘, 숫자 조합으로 <br> 더욱 개성 있게.</p>
                             <a href="" class="link">
                                 <span>AirPods 구입하기</span>
                             </a>
                         </div>
-                        <div class="image-wrap"></div>
+                        <figure class="image-wrap"></figure>
                     </div>
                 </div>
             </section>
@@ -301,7 +369,7 @@
                             </div>
                             <div class="info-area">
                                 <ul class="info-list">
-                                    <!-- <li class="info-item"><p class="text">—</p></li>
+                                    <li class="info-item"><p class="text">—</p></li>
                                     <li class="info-item"><p class="text">—</p></li>
                                     <li class="info-item"><p class="text">—</p></li>
                                     <li class="info-item">
@@ -313,7 +381,7 @@
                                             <span class="value">5시간</span>
                                             <span class="sub-value">한 번 충전으로 <br> 최대 5시간 청취 가능 <sup><a href="#remark-16" class="remark">16</a></sup></span>
                                         </p>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div>
                         </div>

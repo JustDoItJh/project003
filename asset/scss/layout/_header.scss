@@ -1,20 +1,15 @@
 .header {
     // fixed를 사용했을 때 헤더에서 렉이 걸림 sticky로 처리하고 header
-    position: sticky;
     // position: fixed;
+    position: sticky;
     top: 0; right: 0; left: 0;
     z-index: 99;
     display: block;
     width: 100%;
     height: 44px;
     background: #fdfdfd;
-    // transition: transform 0.5s;
-    &.hide {
-        // transform: translateY(-45px);
-        top: -50px;
-
-    }
-
+    &.hide { top: -45px;}
+    &.up {background: #fff;}
     &.dark {
         .lnb-area {
             color: #fff;
@@ -22,22 +17,32 @@
         }
     }
 
-
-    &.up {background: #fff;}
-
     .gnb-area {
-        position: relative;
-        margin: 0 auto;
-        padding: 0 100px;
         background: #323232;
-        color: #f5f5f7;
-        
-        .gnb-list {
+        .gnb-wrap {
             max-width: 980px;
+            position: relative;
+            display: flex;
+            justify-content: center;
             margin: 0 auto;
+            padding: 0 35px;
+            background: #323232;
+            color: #f5f5f7
+        }
+        @include header {
             display: flex;
             justify-content: space-between;
+            padding: 0 10px;
+        }
+        .gnb-list {
+            display: flex;
+            justify-content: space-between;
+            width: 82%;
+            margin: 0 auto;
             line-height: 44px;
+            @include header {
+                display: none;
+            }
 
             .gnb-item {
                 position: relative;
@@ -50,33 +55,116 @@
 
                 .link-gnb {
                     font-size: 12px;
-                    font-weight: 100;
+                    font-weight: 400;
                 }
             }
 
-            .logo {
+        }
+        .logo {
+            padding-right: 5%;
+            @include header {
+                position: absolute;
+                top: 50%; left: 50%; transform: translate(-50%, -50%);
+                padding-right: 0;
+            }
+            .link-logo {
+                display: block;
                 background-image: url(../images/logo.png);
                 background-size: 14px 44px;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 14px;
-                cursor: pointer;
+                width: 14px; height: 44px;
             }
-            .search {
+        }
+        .util-area {
+            display: flex;
+            padding-left: 5%;
+            @include header {
+                padding-left: 0;
+            }
+            .link-search {
+                display: block;
+                padding-right: 50px;
                 background-image: url(../images/search.png);
                 background-size: 15px 88px;
                 background-repeat: no-repeat;
-                width: 15px;
+                width: 15px; height: 44px;
                 cursor: pointer;
+                @include header {
+                    display: none;
+                }
             }
-            .cart {
+            .link-cart {
+                display: inline-block;
                 background-image: url(../images/cart.png);
                 background-size: 13px 44px;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 13px;
+                width: 13px; height: 44px;
                 cursor: pointer;
+                @include header {
+                    padding-right: 35px;
+                }
             }
+        }
+    }
+    .gnb-response {
+        display: none;
+        @include header {
+            display: block;
+            z-index: 100;
+            // input 중에 id가 trigger인 항목
+            input[id=trigger] {display: none;}
+            // label 중에 for가 trigger인 항목
+            label[for=trigger] {
+                position: relative;
+                display: block;
+                cursor: pointer;
+                width: 44px; height: 44px;
+            }
+            // label 중에 for가 trigger인 항목 안의 span
+            label[for=trigger] span {
+                display: block;
+                position: absolute;
+                top: 50%; left: 50%; transform: translate(-50%, -50%);
+                width: 50%; height: 0.5px;
+                background-color: #f5f5f7;
+                transition: transform 0.3s;
+                
+            }
+            /* label[for=trigger] > span의 n번째 요소 */
+            label[for=trigger] span:nth-child(1) { top:40%; }
+            label[for=trigger] span:nth-child(2) { top:60%; }
+
+            /* check시 변하는 label[for=trigger] > span의 n번째 요소  */
+            input[id=trigger]:checked + label span:nth-child(1) {
+                top: 50%;
+                transform: rotate(45deg);
+            }
+            input[id=trigger]:checked + label span:nth-child(2) {
+                top: 50%;
+                transform: rotate(-45deg);
+            }
+
+            /* 사이드바 */
+            .sidebar {
+                width: 100vh;
+                height: 100vh;
+                background-color: #1d1d1f;
+                position: fixed;
+                top: 44px;
+                left: 0;
+                top: -100vh;
+                transition: 0.7s;
+            }
+
+            /* input[id=trigger]가 체크되었을 때 사이드바가 나오는 형제 인접자 */
+            input[id=trigger]:checked ~ .sidebar { top: 44px; }
+
+            /* check시 같이 밀려나가는 CSS 햄버거 메뉴 */
+            input[id=trigger]:checked + label[for=trigger] { transition: 0.3s; }
+
+            /*  */
         }
     }
 
@@ -89,6 +177,7 @@
         border-bottom: 1px solid rgba(#000, .16);
         background: rgba(250, 250, 250, 0.5);
         backdrop-filter: blur(20px); // 자신이 아닌 배경에 필터효과 적용
+        z-index: 99;
         @include desktop {
             padding: 0 22px;
         }
@@ -98,7 +187,7 @@
             justify-content: space-between;
             max-width: 980px; margin: 0 auto;
             .title {
-                font-size: 21px;
+                font-size: 19px;
                 font-weight: 600;
                 display: block;
             }

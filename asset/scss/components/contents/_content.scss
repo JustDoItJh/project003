@@ -7,6 +7,9 @@
 
     .sc-intro & {
         padding-top: 50px;
+        @include desktop {
+            max-width: 70%;
+        }
     }
 
     .main-logo {
@@ -30,12 +33,24 @@
     }
     .desc {
         margin: 0 auto;
-        font-size: 20px;
-        line-height: 1.8;
+        font-size: 21px;
+        line-height: 1.5;
         letter-spacing: .001em;
-        @include desktop {
-            line-height: 1.5;
+        .sc-charge & { margin: 0 120px; }
+        .sc-battery & {
+            margin: 0 80px;
+            @include desktop {
+                margin: 0 55px;
+            }
         }
+        .sc-connect & { margin: 0 130px; }
+        .sc-share & { 
+            margin: 0 240px;
+            @include desktop {
+                margin: 0 32px;
+            }
+        }
+        
     }
     .link-video{
         display: inline-block;
@@ -68,26 +83,42 @@
         &::after {
             content: ">";
         }
+        .sc-design &, .sc-music & { 
+            margin: 10px 0; 
+            @include desktop {
+                font-size: 17px;
+            }
+        }
+        
     }
 }
 
 .column {
-    flex: 1;
+    max-width: 25%;
     .product-area {
         width: 210px;
         height: 480px;
         border-bottom: 1px solid #ddd;
+        @include desktop {
+            width: 160px; height: 370px;
+        }
         .image-box {
             display: flex;
             align-items: flex-end;
             justify-content: center;
             margin: 0 auto;
             width: 210px; height: 235px;
+            @include desktop {
+                width: 99px; height: 130px;
+            }
         }
         .info-box {
             padding-top: 50px;
             width: 210px;
             margin: 0 auto;
+            @include desktop {
+                width: 160px;
+            }
             .title {
                 font-size: 24px;
                 font-weight: 600;
@@ -119,6 +150,9 @@
         padding-bottom: 50px;
         border-bottom: 1px solid #ddd;
         width: 210px;
+        @include desktop {
+            width: 160px;
+        }
         .info-list {}
         .info-item {
             display: flex;
