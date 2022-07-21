@@ -94,13 +94,19 @@
 }
 
 .column {
-    max-width: 25%;
+    max-width: 50%;
+    @include recommend {
+        margin: 0 auto;
+    }
     .product-area {
         width: 210px;
         height: 480px;
         border-bottom: 1px solid #ddd;
         @include desktop {
             width: 160px; height: 370px;
+        }
+        @include recommend {
+            width: 210px;
         }
         .image-box {
             display: flex;
@@ -118,6 +124,9 @@
             margin: 0 auto;
             @include desktop {
                 width: 160px;
+            }
+            @include recommend {
+                width: 210px;
             }
             .title {
                 font-size: 24px;
@@ -152,6 +161,9 @@
         width: 210px;
         @include desktop {
             width: 160px;
+        }
+        @include recommend {
+            width: 210px;
         }
         .info-list {}
         .info-item {

@@ -21,6 +21,7 @@ $mobile: 767px; //320
 $tablet: 1023px; // 768
 $desktop: 1068px; //1024
 
+$recommend: 800px;
 $header: 833px; 
 
 /*반응형, 브라우저 크기가 767px 이하일때*/
@@ -50,3 +51,11 @@ $header: 833px;
     @content;
   }
 }
+
+/*반응형, 브라우저 크기가 800px 이하일때*/
+@mixin recommend{
+  @media (max-width: $recommend){
+    @content;
+  }
+}
+
