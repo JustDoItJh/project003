@@ -1,5 +1,5 @@
 .main {
-    margin-top: 96px;
+    margin-top: 53px;
     text-align: center;
     overflow-x: hidden;
 }
@@ -18,6 +18,14 @@
         width: 2560px; height: 618px;
         margin-left: -1250px;
         margin-top: -60px;
+        @include desktop {
+            width: 100%;
+            margin-left: 0;
+            left: 0;
+            background-image: url(https://www.apple.com/v/airpods-2nd-generation/e/images/overview/hero_fallback__fsi5p5kx7t6q_medium.jpg);
+            background-size: 1068px 363px;
+            height: 363px;
+        }
     }
     
 }
@@ -108,7 +116,13 @@
             flex-direction: row;
             justify-content: center;
             gap: 30px;
+            @include desktop {
+                max-width: 690px;
+                margin: 0 auto;
+                flex-wrap: nowrap;
+            }
 
+            // figure 태그로 background img 잡기
             .image-left {
                 width: 449px; height: 996px;
                 margin-top: 30px;
@@ -119,6 +133,8 @@
                 margin-top: 0;
                 margin-right: 72px;
             }
+
+            
 
             .image-caption {
                 position: absolute;
@@ -236,10 +252,13 @@
             display: flex;
             justify-content: center;
             margin: 0 auto;
-            width: 1135px;
+            max-width: 1135px;
+            @include desktop {
+                flex-direction: column;
+            }
         }
         .text-area {
-            width: 400px;
+            max-width: 400px;
             margin-right: 20px;
             .main-title {font-size: 42px;}
             .desc {width: 70%;}
@@ -320,7 +339,7 @@
         }
 
         .group-inner {
-            width: 940px;
+            max-width: 940px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;

@@ -22,70 +22,76 @@
 
 
     
-    "airpods-2nd":[
+    "airpods2nd":[
         {
-            "empty":"—"
+           "function":"multisound",
+           "mounted":false
         },
         {
-            "empty":"—"
+            "function":"noise",
+            "mounted":false
         },
         {
-            "empty":"—"
+            "function":"wather",
+            "mounted":false
         },
         {
-            "imgSrc":"./asset/images/col4.png",
-            "infoCharge":"Lightning 케이블 충전"
+            "function":"charging",
+            "mounted":true
         },
         {
-            "time":"5시간",
-            "infoTime":"한 번 충전으로 <br> 최대 5시간 청취 가능"
+            "function":"duration",
+            "time":5,
+            "mounted":true
         }
     ],
-    "airpods-3rd":[
+    "airpods3rd":[
         {
-            "imgSrc":"./asset/images/col1.png",
-            "infoSound":"동적 머리 추적 기술로 <br> 구현되는 공간 음향"
-        },
-        {
-            "empty":"—"
-        },
-        {
-            "imgSrc":"./asset/images/col3.png",
-            "infoWater":"땀과 습기에 강한 <br> 생활 방수 디자인"
-        },
-        {
-            "imgSrc":"./asset/images/col4.png",
-            "infoCharge":"MagSafe, 무선 및 <br> Lightning 케이블 충전"
-        },
-        {
-            "time":"6시간",
-            "infoTime":"한 번 충전으로 <br> 최대 6시간 청취 가능"
-        }
+            "function":"multisound",
+            "mounted":false
+         },
+         {
+             "function":"noise",
+             "mounted":false
+         },
+         {
+             "function":"wather",
+             "mounted":false
+         },
+         {
+             "function":"charging",
+             "mounted":true
+         },
+         {
+             "function":"duration",
+             "time":5,
+             "mounted":true
+         }
     ],
-    "airpods-pro":[
+    "airpodspro":[
         {
-            "imgSrc":"./asset/images/col1.png",
-            "infoSound":"동적 머리 추적 기술로 <br> 구현되는 공간 음향"
-        },
-        {
-            "imgSrc":"./asset/images/col2_1.png",
-            "imgSrc2":"./asset/images/col2_2.png",
-            "infoNoise":"액티브 노이즈 캔슬링과 <br> 주변음 허용 모드"
-        },
-        {
-            "imgSrc":"./asset/images/col3.png",
-            "infoWater":"땀과 습기에 강한 <br> 생활 방수 디자인"
-        },
-        {
-            "imgSrc":"./asset/images/col4.png",
-            "infoCharge":"MagSafe, 무선 및 <br> Lightning 케이블 충전"
-        },
-        {
-            "time":"4.5시간",
-            "infoTime":"한 번 충전으로 <br> 최대 4.5시간 청취 가능"
-        }
+            "function":"multisound",
+            "mounted":false
+         },
+         {
+             "function":"noise",
+             "mounted":true
+         },
+         {
+             "function":"wather",
+             "mounted":false
+         },
+         {
+             "function":"charging",
+             "mounted":true
+         },
+         {
+             "function":"duration",
+             "time":5,
+             "mounted":true
+         }
     ],
-    "airpods-max":[
+    "airpodsmax":[
         {
             "imgSrc":"./asset/images/col1.png",
             "infoSound":"동적 머리 추적 기술로 <br> 구현되는 공간 음향"

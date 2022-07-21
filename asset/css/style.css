@@ -1,6 +1,43 @@
 @charset "UTF-8";
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap");
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 767px 이하일때*/
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@font-face {
+  font-family: "sfkr";
+  src: url(../font/SFProKRDisplay_light.woff2) format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "sfkr";
+  src: url(../font/SFProKRDisplay_regular.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "sfkr";
+  src: url(../font/SFProKRDisplay_medium.woff2) format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "sfkr";
+  src: url(../font/SFProKRDisplay_semibold.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "sfdisplay";
+  src: url(../font/sf-pro-display_regular.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "sfkrdisplay";
+  src: url(../font/sf-pro-display_medium.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "sfkrdisplay";
+  src: url(../font/sf-pro-display_semibold.woff2) format("woff2");
+  font-weight: 600;
+}
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +95,7 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Lato", "Noto Sans KR", sans-serif;
+  font-family: "sfdisplay", "sfkr", sans-serif;
   font-weight: 400;
   letter-spacing: 0.001em;
   color: #1d1d1f;
@@ -217,8 +254,18 @@ sup:hover {
   padding: 4px 11px;
 }
 
+.m-visible {
+  display: none;
+}
+@media (max-width: 767px) {
+  .m-visible {
+    display: block;
+  }
+}
+
 .header {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -227,10 +274,13 @@ sup:hover {
   width: 100%;
   height: 44px;
   background: #fdfdfd;
-  transition-duration: 0.5s;
 }
 .header.hide {
-  transform: translateY(-45px);
+  top: -50px;
+}
+.header.dark .lnb-area {
+  color: #fff;
+  background: rgba(29, 29, 31, 0.72);
 }
 .header.up {
   background: #fff;
@@ -292,10 +342,15 @@ sup:hover {
   height: 52px;
   line-height: 52px;
   padding: 0 100px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
   background: rgba(250, 250, 250, 0.5);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+}
+@media (max-width: 1068px) {
+  .header .lnb-area {
+    padding: 0 22px;
+  }
 }
 .header .lnb-area .group-area {
   display: flex;
@@ -338,7 +393,7 @@ sup:hover {
 }
 
 .footer-inner {
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 20px 0;
 }
@@ -394,7 +449,7 @@ sup:hover {
   content: ">";
 }
 .footer-inner .remark-area {
-  font-family: "Lato", "Noto Sans KR", sans-serif;
+  font-family: "sfdisplay", "sfkr", sans-serif;
   font-size: 11px;
   line-height: 1.5;
   padding: 20px 0;
@@ -504,20 +559,39 @@ sup:hover {
   margin: 0 auto;
   z-index: 2;
 }
+.sc-intro .main-content {
+  padding-top: 50px;
+}
 .main-content .main-logo {
   font-size: 40px;
   font-weight: 600;
+  line-height: 1;
+}
+@media (max-width: 1068px) {
+  .main-content .main-logo {
+    font-size: 32px;
+  }
 }
 .main-content .main-title {
   font-size: 48px;
   font-weight: 600;
   margin: 10px 0;
 }
+@media (max-width: 1068px) {
+  .main-content .main-title {
+    font-size: 40px;
+  }
+}
 .main-content .desc {
   margin: 0 auto;
   font-size: 20px;
   line-height: 1.8;
   letter-spacing: 0.001em;
+}
+@media (max-width: 1068px) {
+  .main-content .desc {
+    line-height: 1.5;
+  }
 }
 .main-content .link-video {
   display: inline-block;
@@ -632,7 +706,7 @@ sup:hover {
 }
 
 .main {
-  margin-top: 96px;
+  margin-top: 53px;
   text-align: center;
   overflow-x: hidden;
 }
@@ -651,6 +725,16 @@ sup:hover {
   height: 618px;
   margin-left: -1250px;
   margin-top: -60px;
+}
+@media (max-width: 1068px) {
+  .sc-intro .image-wrap {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    background-image: url(https://www.apple.com/v/airpods-2nd-generation/e/images/overview/hero_fallback__fsi5p5kx7t6q_medium.jpg);
+    background-size: 1068px 363px;
+    height: 363px;
+  }
 }
 
 .sc-wireless {
@@ -741,6 +825,13 @@ sup:hover {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
+}
+@media (max-width: 1068px) {
+  .sc-performance .sub-content .image-wrap {
+    max-width: 690px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+  }
 }
 .sc-performance .sub-content .image-wrap .image-left {
   width: 449px;
@@ -866,10 +957,15 @@ sup:hover {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 1135px;
+  max-width: 1135px;
+}
+@media (max-width: 1068px) {
+  .sc-design .main-content .inner {
+    flex-direction: column;
+  }
 }
 .sc-design .main-content .text-area {
-  width: 400px;
+  max-width: 400px;
   margin-right: 20px;
 }
 .sc-design .main-content .text-area .main-title {
@@ -955,7 +1051,7 @@ sup:hover {
   font-weight: 600;
 }
 .sc-recommend .main-content .group-inner {
-  width: 940px;
+  max-width: 940px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

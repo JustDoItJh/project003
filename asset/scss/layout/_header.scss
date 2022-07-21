@@ -1,13 +1,28 @@
 .header {
-    position: fixed;
+    // fixed를 사용했을 때 헤더에서 렉이 걸림 sticky로 처리하고 header
+    position: sticky;
+    // position: fixed;
     top: 0; right: 0; left: 0;
     z-index: 99;
     display: block;
     width: 100%;
     height: 44px;
     background: #fdfdfd;
-    transition-duration: 0.5s;
-    &.hide {transform: translateY(-45px);}
+    // transition: transform 0.5s;
+    &.hide {
+        // transform: translateY(-45px);
+        top: -50px;
+
+    }
+
+    &.dark {
+        .lnb-area {
+            color: #fff;
+            background: rgba(29,29,31,0.72);
+        }
+    }
+
+
     &.up {background: #fff;}
 
     .gnb-area {
@@ -71,9 +86,12 @@
         height: 52px;
         line-height: 52px;
         padding: 0 100px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(#000, .16);
         background: rgba(250, 250, 250, 0.5);
         backdrop-filter: blur(20px); // 자신이 아닌 배경에 필터효과 적용
+        @include desktop {
+            padding: 0 22px;
+        }
 
         .group-area {
             display: flex;

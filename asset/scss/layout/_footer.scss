@@ -5,7 +5,7 @@
     color: #6e6e73;
 }
 .footer-inner {
-    width: 980px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 20px 0;
 
@@ -63,7 +63,7 @@
     }
 
     .remark-area {
-        font-family: $font-en;
+        font-family: $font-kr;
         font-size: 11px;
         line-height: 1.5;
         padding: 20px 0;

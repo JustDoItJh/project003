@@ -4,20 +4,38 @@
     max-width: 55%;
     margin: 0 auto;
     z-index: 2;
+
+    .sc-intro & {
+        padding-top: 50px;
+    }
+
     .main-logo {
         font-size: 40px;
         font-weight: 600;
+        line-height: 1;
+        @include desktop {
+            font-size: 32px;
+        }
     }
     .main-title {
         font-size: 48px;
         font-weight: 600;
         margin: 10px 0;
+        @include desktop {
+            font-size: 40px;
+        }
+        .sc-recommend & {
+
+        }
     }
     .desc {
         margin: 0 auto;
         font-size: 20px;
         line-height: 1.8;
         letter-spacing: .001em;
+        @include desktop {
+            line-height: 1.5;
+        }
     }
     .link-video{
         display: inline-block;
