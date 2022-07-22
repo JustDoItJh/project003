@@ -1,14 +1,14 @@
 .main-content {
     position: relative;
     padding-top: 100px;
-    max-width: 55%;
+    max-width: 980px;
     margin: 0 auto;
     z-index: 2;
 
-    .sc-intro & {
+    .sc-intro &, .sc-wireless & {
         padding-top: 50px;
         @include desktop {
-            max-width: 70%;
+            max-width: 692px;
         }
     }
 
@@ -36,6 +36,19 @@
         font-size: 21px;
         line-height: 1.5;
         letter-spacing: .001em;
+        .sc-intro & {
+            margin: 0 200px;
+            @include desktop {
+                margin: 0 50px;
+            }
+        }
+        .sc-wireless & {
+            margin: 0 202px;
+            @include desktop {
+                margin: 0 60px;
+            }
+        }
+        .sc-performance & {margin: 0 120px;}
         .sc-charge & { margin: 0 120px; }
         .sc-battery & {
             margin: 0 80px;

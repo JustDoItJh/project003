@@ -289,25 +289,24 @@ sup:hover {
 }
 .header .gnb-area {
   background: #323232;
+  width: 100%;
 }
 .header .gnb-area .gnb-wrap {
-  max-width: 980px;
   position: relative;
   display: flex;
   justify-content: center;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 35px;
-  background: #323232;
   color: #f5f5f7;
 }
 @media (max-width: 833px) {
-  .header .gnb-area {
-    display: flex;
+  .header .gnb-area .gnb-wrap {
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 22px 0 12px;
   }
 }
-.header .gnb-area .gnb-list {
+.header .gnb-area .gnb-wrap .gnb-list {
   display: flex;
   justify-content: space-between;
   width: 82%;
@@ -315,28 +314,28 @@ sup:hover {
   line-height: 44px;
 }
 @media (max-width: 833px) {
-  .header .gnb-area .gnb-list {
+  .header .gnb-area .gnb-wrap .gnb-list {
     display: none;
   }
 }
-.header .gnb-area .gnb-list .gnb-item {
+.header .gnb-area .gnb-wrap .gnb-list .gnb-item {
   position: relative;
   display: inline-block;
   vertical-align: top;
   opacity: 0.8;
 }
-.header .gnb-area .gnb-list .gnb-item:hover {
+.header .gnb-area .gnb-wrap .gnb-list .gnb-item:hover {
   opacity: 1;
 }
-.header .gnb-area .gnb-list .gnb-item .link-gnb {
+.header .gnb-area .gnb-wrap .gnb-list .gnb-item .link-gnb {
   font-size: 12px;
   font-weight: 400;
 }
-.header .gnb-area .logo {
+.header .gnb-area .gnb-wrap .logo {
   padding-right: 5%;
 }
 @media (max-width: 833px) {
-  .header .gnb-area .logo {
+  .header .gnb-area .gnb-wrap .logo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -344,7 +343,7 @@ sup:hover {
     padding-right: 0;
   }
 }
-.header .gnb-area .logo .link-logo {
+.header .gnb-area .gnb-wrap .logo .link-logo {
   display: block;
   background-image: url(../images/logo.png);
   background-size: 14px 44px;
@@ -353,16 +352,16 @@ sup:hover {
   width: 14px;
   height: 44px;
 }
-.header .gnb-area .util-area {
+.header .gnb-area .gnb-wrap .util-area {
   display: flex;
   padding-left: 5%;
 }
 @media (max-width: 833px) {
-  .header .gnb-area .util-area {
+  .header .gnb-area .gnb-wrap .util-area {
     padding-left: 0;
   }
 }
-.header .gnb-area .util-area .link-search {
+.header .gnb-area .gnb-wrap .util-area .link-search {
   display: block;
   padding-right: 50px;
   background-image: url(../images/search.png);
@@ -373,11 +372,11 @@ sup:hover {
   cursor: pointer;
 }
 @media (max-width: 833px) {
-  .header .gnb-area .util-area .link-search {
+  .header .gnb-area .gnb-wrap .util-area .link-search {
     display: none;
   }
 }
-.header .gnb-area .util-area .link-cart {
+.header .gnb-area .gnb-wrap .util-area .link-cart {
   display: inline-block;
   background-image: url(../images/cart.png);
   background-size: 13px 44px;
@@ -387,16 +386,11 @@ sup:hover {
   height: 44px;
   cursor: pointer;
 }
-@media (max-width: 833px) {
-  .header .gnb-area .util-area .link-cart {
-    padding-right: 35px;
-  }
-}
-.header .gnb-response {
+.header .gnb-area .gnb-wrap .gnb-response {
   display: none;
 }
 @media (max-width: 833px) {
-  .header .gnb-response {
+  .header .gnb-area .gnb-wrap .gnb-response {
     display: block;
     z-index: 100;
     /* label[for=trigger] > span의 n번째 요소 */
@@ -406,17 +400,17 @@ sup:hover {
     /* check시 같이 밀려나가는 CSS 햄버거 메뉴 */
     /*  */
   }
-  .header .gnb-response input[id=trigger] {
+  .header .gnb-area .gnb-wrap .gnb-response input[id=trigger] {
     display: none;
   }
-  .header .gnb-response label[for=trigger] {
+  .header .gnb-area .gnb-wrap .gnb-response label[for=trigger] {
     position: relative;
     display: block;
     cursor: pointer;
     width: 44px;
     height: 44px;
   }
-  .header .gnb-response label[for=trigger] span {
+  .header .gnb-area .gnb-wrap .gnb-response label[for=trigger] span {
     display: block;
     position: absolute;
     top: 50%;
@@ -427,21 +421,21 @@ sup:hover {
     background-color: #f5f5f7;
     transition: transform 0.3s;
   }
-  .header .gnb-response label[for=trigger] span:nth-child(1) {
+  .header .gnb-area .gnb-wrap .gnb-response label[for=trigger] span:nth-child(1) {
     top: 40%;
   }
-  .header .gnb-response label[for=trigger] span:nth-child(2) {
+  .header .gnb-area .gnb-wrap .gnb-response label[for=trigger] span:nth-child(2) {
     top: 60%;
   }
-  .header .gnb-response input[id=trigger]:checked + label span:nth-child(1) {
+  .header .gnb-area .gnb-wrap .gnb-response input[id=trigger]:checked + label span:nth-child(1) {
     top: 50%;
     transform: rotate(45deg);
   }
-  .header .gnb-response input[id=trigger]:checked + label span:nth-child(2) {
+  .header .gnb-area .gnb-wrap .gnb-response input[id=trigger]:checked + label span:nth-child(2) {
     top: 50%;
     transform: rotate(-45deg);
   }
-  .header .gnb-response .sidebar {
+  .header .gnb-area .gnb-wrap .gnb-response .sidebar {
     width: 100vh;
     height: 100vh;
     background-color: #1d1d1f;
@@ -451,10 +445,10 @@ sup:hover {
     top: -100vh;
     transition: 0.7s;
   }
-  .header .gnb-response input[id=trigger]:checked ~ .sidebar {
+  .header .gnb-area .gnb-wrap .gnb-response input[id=trigger]:checked ~ .sidebar {
     top: 44px;
   }
-  .header .gnb-response input[id=trigger]:checked + label[for=trigger] {
+  .header .gnb-area .gnb-wrap .gnb-response input[id=trigger]:checked + label[for=trigger] {
     transition: 0.3s;
   }
 }
@@ -518,7 +512,7 @@ sup:hover {
 
 .footer-inner {
   max-width: 980px;
-  padding: 0 22px;
+  padding: 0 22px 20px;
   margin: 0 auto;
 }
 .footer-inner .service-area {
@@ -537,6 +531,11 @@ sup:hover {
   flex: 1;
   width: 216px;
   padding-top: 50px;
+}
+@media (max-width: 1023px) {
+  .footer-inner .service-list .service-item {
+    flex-basis: 50%;
+  }
 }
 .footer-inner .service-list .service-item .link-service {
   display: block;
@@ -682,16 +681,16 @@ sup:hover {
 .main-content {
   position: relative;
   padding-top: 100px;
-  max-width: 55%;
+  max-width: 980px;
   margin: 0 auto;
   z-index: 2;
 }
-.sc-intro .main-content {
+.sc-intro .main-content, .sc-wireless .main-content {
   padding-top: 50px;
 }
 @media (max-width: 1068px) {
-  .sc-intro .main-content {
-    max-width: 70%;
+  .sc-intro .main-content, .sc-wireless .main-content {
+    max-width: 692px;
   }
 }
 .main-content .main-logo {
@@ -719,6 +718,25 @@ sup:hover {
   font-size: 21px;
   line-height: 1.5;
   letter-spacing: 0.001em;
+}
+.sc-intro .main-content .desc {
+  margin: 0 200px;
+}
+@media (max-width: 1068px) {
+  .sc-intro .main-content .desc {
+    margin: 0 50px;
+  }
+}
+.sc-wireless .main-content .desc {
+  margin: 0 202px;
+}
+@media (max-width: 1068px) {
+  .sc-wireless .main-content .desc {
+    margin: 0 60px;
+  }
+}
+.sc-performance .main-content .desc {
+  margin: 0 120px;
 }
 .sc-charge .main-content .desc {
   margin: 0 120px;
@@ -968,12 +986,19 @@ sup:hover {
   }
 }
 .sc-wireless .sub-content {
-  position: absolute;
+  position: relative;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  max-width: 60%;
+  max-width: 960px;
+  padding: 0 200px;
+}
+@media (max-width: 1068px) {
+  .sc-wireless .sub-content {
+    max-width: 690px;
+    padding: 0 60px;
+  }
 }
 .sc-wireless .sub-content img {
   margin: 0 auto;
@@ -985,10 +1010,10 @@ sup:hover {
 }
 .sc-wireless .sub-content .desc {
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 .sc-wireless .sub-content .func-list {
-  margin-top: 30px;
+  margin: 30px 0 60px;
   display: flex;
   justify-content: space-between;
 }
@@ -1024,9 +1049,6 @@ sup:hover {
   position: relative;
   background: #fafafa;
   padding-bottom: 50px;
-}
-.sc-performance .main-content {
-  max-width: 67%;
 }
 .sc-performance .sub-content {
   padding: 50px 0 100px;

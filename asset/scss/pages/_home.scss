@@ -58,10 +58,16 @@
         }
     }
     .sub-content {
-        position: absolute;
+        position: relative;
         top: 80%; left: 50%; transform: translate(-50%, -50%);
         z-index: 1;
-        max-width: 60%;
+        max-width: 960px;
+        padding: 0 200px;
+        
+        @include desktop {
+            max-width: 690px;
+            padding: 0 60px;
+        }
         img {margin: 0 auto;}
 
         .sub-title {
@@ -71,11 +77,11 @@
         }
         .desc {
             font-size: 17px;
-            line-height: 1.8;
+            line-height: 1.5;
         }
 
         .func-list {
-            margin-top: 30px;
+            margin: 30px 0 60px;
             display: flex;
             justify-content: space-between;
             .func-item {
@@ -113,9 +119,7 @@
     position: relative;
     background: #fafafa;
     padding-bottom: 50px;
-    .main-content {
-        max-width: 67%;
-    }
+
     .sub-content {
         padding: 50px 0 100px;
         .image-wrap {
