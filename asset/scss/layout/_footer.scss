@@ -89,7 +89,9 @@
         position: relative;
         padding: 20px 0;
         color: #424245;
-
+        @include header {
+            border-bottom: 1px solid #ddd;
+        }
         &-list {
             display: flex;
 
@@ -123,18 +125,41 @@
         font-size: 12px;
         display: flex;
         flex-wrap: nowrap;
+        @include header {
+            flex-direction: column;
+        }
 
         .nav-wrap {
             flex-basis: 20%;
 
             .nav-box {
                 margin-bottom: 30px;
+                @include header {
+                    margin-bottom: 0;
+                    border-bottom: 1px solid #ddd;
+                }
                 .title {
                     color: #1d1d1d;
                     font-weight: 600;
                     margin-bottom: 10px;
+                    @include header {
+                        color: #6e6e73;
+                        font-weight: 400;
+                        padding: 10px 0;
+                        margin-bottom: 0;
+                        &:hover {color: #000;}
+                        &::after {
+                            content: '+';
+                            float: right;
+                            cursor: pointer;
+                        }
+                    }
                 }
-                .nav-list {}
+                .nav-list {
+                    @include header {
+                        display: none;
+                    }
+                }
                 .nav-item {
                     margin-bottom: 8px;
                     color: #424245;
@@ -146,31 +171,60 @@
 
     .group-flex {
         padding-top: 30px;
-        font-size: 11px;
+        font-size: 12px;
         color: #6e6e73;
-
+        @include header {
+            padding: 19px 0;
+        }
         .row-top {
             margin-bottom: 8px;
             padding-bottom: 8px;
             border-bottom: 1px solid #ddd;
+            @include header {
+                border-bottom: none;
+            }
             a {color: #06c;}
         }
         .row-bottom {
             overflow: hidden;
-            address {float: left; margin-right: 30px;}
+            @include header {
+                display: flex;
+                flex-direction: column;
+            }
+            address {
+                float: left; margin-right: 30px;
+                @include header {
+                    margin: 0 30px 5px 0;
+                }
+            }
             .policy {
                 float: left;
                 position: relative;
                 .link-policy {
-                    margin-right: 15px;
+                    border-right: 1px solid #ddd;
+                    padding-right: 8px;
+                    margin-left: 5px;
                     color: #424245;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        border: none;
+                        padding-right: 0;
+                    }
                     &:hover {
                         text-decoration: underline;
                     }
                 }
                 
             }
-            .region {float: right;}
+            .region {
+                float: right;
+                @include header {
+                    order: -1;
+                    margin-bottom: 16px;
+                }
+            }
         }
     }
 }

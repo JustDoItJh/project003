@@ -12,20 +12,28 @@
     
     &>.image-wrap {
         position: relative;
-        left: 50%;
+        margin-left: -45%;
         background-image: url(../images/main.jpg);
         background-repeat: no-repeat;
+        background-position: center center;
         width: 2560px; height: 618px;
-        margin-left: -1250px;
+        
         margin-top: -60px;
         @include desktop {
             width: 100%;
-            margin-left: -100px;
             margin-top: -30px;
-            left: 0;
+            margin-left: 2%;
             background-image: url(https://www.apple.com/v/airpods-2nd-generation/e/images/overview/hero_fallback__fsi5p5kx7t6q_medium.jpg);
             background-size: 1068px 363px;
+            background-position: center center;
             height: 363px;
+        }
+        @include mobile {
+            background-image: url(../images/main_small.jpg);
+            background-size: 736px 230px;
+            background-position: center center;
+            width: 736px; height: 230px;
+            margin-left: -5%;
         }
     }
     
@@ -50,16 +58,24 @@
         @include desktop {
             left: 50%; transform: translateX(-50%);
             margin-top: -150px;
-            background-image: url(../images/wireless.jpg);
+            background-image: url(../images/wireless_medium.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
             width: 1068px; height: 1018px;
         }
+        @include mobile {
+            background-image: url(../images/wireless_small.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 736px 662px;
+            width: 736px; height: 662px;
+            margin: 0;
+        }
     }
     .sub-content {
         position: relative;
-        top: 80%; left: 50%; transform: translate(-50%, -50%);
+        top: 0%; left: 50%; transform: translate(-50%, -50%);
         z-index: 1;
         max-width: 960px;
         padding: 0 200px;
@@ -68,12 +84,21 @@
             max-width: 690px;
             padding: 0 60px;
         }
+        @include mobile {
+            max-width: 625px;
+            padding: 0 36px;
+            text-align: left;
+            margin-top: 200px;
+        }
         img {margin: 0 auto;}
 
         .sub-title {
             font-size: 48px;
             font-weight: 600;
             margin: 15px 0 10px;
+            @include mobile {
+                font-size: 32px;
+            }
         }
         .desc {
             font-size: 17px;
@@ -84,7 +109,20 @@
             margin: 30px 0 60px;
             display: flex;
             justify-content: space-between;
+            text-align: center;
+            @include mobile {
+                max-width: 308px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 30px auto;
+                margin-bottom: -200px;
+            }
             .func-item {
+                @include mobile {
+                    width: 140px;
+                    margin-bottom: 30px;
+                }
                 .wireless-icon {
                     position: relative;
                     display: block;
@@ -119,6 +157,10 @@
     position: relative;
     background: #fafafa;
     padding-bottom: 50px;
+    @include mobile {
+        height: auto;
+        padding-bottom: 0;
+    }
 
     .sub-content {
         padding: 50px 0 100px;
@@ -133,6 +175,11 @@
                 max-width: 690px;
                 margin: 0 auto;
                 flex-wrap: nowrap;
+            }
+            @include mobile {
+                max-width: 100%;
+                gap: 5px;
+                flex-wrap: wrap;
             }
 
             // figure 태그로 background img 잡기
@@ -149,6 +196,13 @@
                     width: 341px; height: 758px;
                     margin-top: 90px;
                 }
+                @include mobile {
+                    background-image: url(../images/left_small.jpg);
+                    background-repeat: no-repeat;
+                    background-size: 157px 350px;
+                    width: 157px; height: 350px;
+                    margin-top: 0;
+                }
             }
             .image-right {
                 background-image: url(../images/performance_right.jpg);
@@ -162,10 +216,20 @@
                     background-size: 298px 756px;
                     width: 298px; height: 756px;
                 }
+                @include mobile {
+                    background-image: url(../images/right_small.jpg);
+                    background-repeat: no-repeat;
+                    background-size: 138px 353px;
+                    width: 138px; height: 353px;
+                }
             }
 
             .image-caption {
                 position: absolute;
+                @include mobile {
+                    margin: 0 36px;
+                    position: relative;
+                }
                 
                 .left-caption, .right-caption {
                     position: absolute;
@@ -180,9 +244,31 @@
                         width: 200px;
                         top: 450px;
                     }
+                    @include mobile {
+                        position: relative;
+                        min-width: 422px;
+                        top: 0; right: 0;
+                        margin-top: 30px;
+                    }
                 }
-                .left-caption { right: 200px; @include desktop {right: 150px;}}
-                .right-caption { left: 230px; @include desktop {left: 160px;}}
+                .left-caption {
+                    right: 200px;
+                    @include desktop {
+                        right: 150px;
+                    }
+                    @include mobile {
+                        right: 0;
+                    }
+                }
+                .right-caption {
+                    left: 230px;
+                    @include desktop {
+                        left: 160px;
+                    }
+                    @include mobile {
+                        left: 0;
+                    }
+                }
             }
         }
     }
@@ -190,11 +276,7 @@
 
 
 // --------------------------- sc-charge ----------------------------
-.sc-charge {
-    .main-content {
-        max-width: 980px;
-    }
-}
+.sc-charge {}
 
 
 // --------------------------- sc-battery ----------------------------
@@ -213,7 +295,9 @@
         max-width: 500px;
         margin-top: 30px;
         z-index: 2;
-        
+        @include mobile {
+            max-width: 400px;
+        }
         
         .func-item {
             display: flex;
@@ -246,6 +330,14 @@
             background-size: cover;
             width: 1068px; height: 747px;
         }
+        @include mobile {
+            background-image: url(../images/battery_small.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            width: 736px; height: 356px;
+            margin-top: 50px;
+        }
     }
 }
 
@@ -267,6 +359,12 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 500px; height: 560px;
+        }
+        @include mobile {
+            background-image: url(../images/connect_small.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 314px; height: 349px;
         }
     }
 }
@@ -292,6 +390,12 @@
             background-repeat: no-repeat;
             background-size: 723px 697px;
             width: 723px; height: 697px;
+        }
+        @include mobile {
+            background-image: url(../images/share_small.jpg);
+            background-repeat: no-repeat;
+            background-size: 405px 421px;
+            width: 405px; height: 421px;
         }
     }
 }
@@ -324,11 +428,17 @@
                 max-width: 100%;
                 margin-right: 20px;
                 line-height: 1.2;
+                @include desktop {
+                    margin-right: 0;
+                }
                 .main-title {
                     font-size: 48px;
                     @include desktop {
                         font-size: 40px;
                         line-height: 1.2;
+                    }
+                    @include mobile {
+                        font-size: 32px;
                     }
                 }
                 .desc {
@@ -351,6 +461,11 @@
                     background-repeat: no-repeat;
                     margin-left: -30px;
                 }
+                @include mobile {
+                    background-image: url(../images/design_small.png);
+                    background-repeat: no-repeat;
+                    width: 274px; height: 114px;
+                }
             }
         }
     }
@@ -368,6 +483,9 @@
         padding: 60px 0 60px 60px;
         @include desktop {
             padding: 10px 0 60px;
+        }
+        @include mobile {
+            padding-bottom: 30px;
         }
         .inner {
             display: flex;
@@ -397,6 +515,9 @@
                         line-height: 1.2;
                         padding: 0 35px;
                     }
+                    @include mobile {
+                        font-size: 32px;
+                    }
                 }
             }
             .image-wrap {
@@ -409,12 +530,23 @@
                     position: absolute;
                     top: 60%; left: 50%; transform: translate(-50%, -50%);
                     z-index: 1;
+                    @include mobile {
+                        background-image: url(../images/music_small.jpg);
+                        background-repeat: no-repeat;
+                        width: 247px; height: 247px;
+                    }
                 }
                 .music2 {
                     position: absolute;
                     top: 45%; left: 50%; transform: translate(-50%, -50%);
                     @include desktop {
                         width: 90%;
+                    }
+                    @include mobile {
+                        background-image: url(../images/music_small2.jpg);
+                        background-repeat: no-repeat;
+                        width: 229px; height: 259px;
+                        top: 49%;
                     }
                 }
                 .music3 {
@@ -424,6 +556,12 @@
                     @include desktop {
                         top: 40%; left: -25%;
                     }
+                    @include mobile {
+                        background-image: url(../images/music_left_small.jpg);
+                        background-repeat: no-repeat;
+                        width: 99px; height: 157px;
+                        top: 45%; left: -10%;
+                    }
                 }
                 .music4 {
                     position: absolute;
@@ -431,6 +569,12 @@
                     z-index: 2;
                     @include desktop {
                         right: -25%;
+                    }
+                    @include mobile {
+                        background-image: url(../images/music_right_small.jpg);
+                        background-repeat: no-repeat;
+                        width: 100px; height: 155px;
+                        top: 30%; right: -10%;
                     }
                 }
             }
@@ -470,7 +614,9 @@
                 max-width: 540px;
                 flex-wrap: wrap;
                 padding: 0;
-                margin: 0 100px;
+            }
+            @include mobile {
+                margin: 0 auto;
             }
         }
 
