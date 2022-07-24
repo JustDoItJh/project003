@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 320px 이하일때*/
 /*반응형, 브라우저 크기가 767px 이하일때*/
 /*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상일때*/
@@ -482,12 +483,19 @@ sup:hover {
   display: block;
 }
 .header .lnb-area .group-area .menu-area {
+  display: flex;
   font-size: 11px;
   font-weight: 400;
 }
 .header .lnb-area .group-area .menu-area .menu-list {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 833px) {
+  .header .lnb-area .group-area .menu-area .menu-list {
+    display: none;
+    max-height: 400px;
+  }
 }
 .header .lnb-area .group-area .menu-area .menu-list .menu-item {
   margin-right: 20px;
@@ -499,8 +507,23 @@ sup:hover {
 .header .lnb-area .group-area .menu-area .menu-list .menu-item .active:hover {
   color: #06c;
 }
-.header .lnb-area .group-area .menu-area .menu-list .menu-item .link-buy {
-  margin-right: -20px;
+.header .lnb-area .group-area .menu-area .btn-toggle {
+  display: none;
+}
+@media (max-width: 833px) {
+  .header .lnb-area .group-area .menu-area .btn-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .header .lnb-area .group-area .menu-area .btn-toggle::after {
+    content: "+";
+  }
+}
+.header .lnb-area .group-area .menu-area .link-buy {
+  font-size: 12px;
+  margin: 12px 0 14px;
 }
 
 .footer {
@@ -535,6 +558,11 @@ sup:hover {
 @media (max-width: 1023px) {
   .footer-inner .service-list .service-item {
     flex-basis: 50%;
+  }
+}
+@media (max-width: 320px) {
+  .footer-inner .service-list .service-item {
+    flex-basis: 100%;
   }
 }
 .footer-inner .service-list .service-item .link-service {
@@ -645,6 +673,7 @@ sup:hover {
   .footer-inner .nav-area .nav-wrap .nav-box {
     margin-bottom: 0;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
   }
 }
 .footer-inner .nav-area .nav-wrap .nav-box .title {
@@ -786,11 +815,23 @@ sup:hover {
     margin: 0 36px;
   }
 }
+@media (max-width: 320px) {
+  .sc-wireless .main-content {
+    max-width: 280px;
+    margin: 0 20px;
+  }
+}
 @media (max-width: 734px) {
   .sc-performance .main-content, .sc-charge .main-content, .sc-battery .main-content, .sc-connect .main-content, .sc-share .main-content {
     max-width: 625px;
     text-align: left;
     margin: 0 36px;
+  }
+}
+@media (max-width: 320px) {
+  .sc-performance .main-content, .sc-charge .main-content, .sc-battery .main-content, .sc-connect .main-content, .sc-share .main-content {
+    max-width: 280px;
+    margin: 0 20px;
   }
 }
 .main-content .main-logo {
@@ -829,6 +870,11 @@ sup:hover {
     line-height: 1.2;
   }
 }
+@media (max-width: 320px) {
+  .sc-connect .main-content .main-title {
+    padding-right: 100px;
+  }
+}
 .main-content .desc {
   margin: 0 auto;
   font-size: 21px;
@@ -863,11 +909,11 @@ sup:hover {
     font-size: 19px;
   }
 }
-.sc-performance .main-content .desc .sc-charge .main-content .desc {
+.sc-performance .main-content .desc, .sc-charge .main-content .desc {
   margin: 0 120px;
 }
 @media (max-width: 734px) {
-  .sc-performance .main-content .desc .sc-charge .main-content .desc {
+  .sc-performance .main-content .desc, .sc-charge .main-content .desc {
     margin: 0;
     font-size: 19px;
   }
@@ -979,6 +1025,11 @@ sup:hover {
     width: 210px;
   }
 }
+@media (max-width: 320px) {
+  .column .product-area {
+    width: 135px;
+  }
+}
 .column .product-area .image-box {
   display: flex;
   align-items: flex-end;
@@ -1006,6 +1057,11 @@ sup:hover {
 @media (max-width: 800px) {
   .column .product-area .info-box {
     width: 210px;
+  }
+}
+@media (max-width: 320px) {
+  .column .product-area .info-box {
+    width: 135px;
   }
 }
 .column .product-area .info-box .title {
@@ -1045,6 +1101,11 @@ sup:hover {
 @media (max-width: 800px) {
   .column .info-area {
     width: 210px;
+  }
+}
+@media (max-width: 320px) {
+  .column .info-area {
+    width: 135px;
   }
 }
 .column .info-area .info-item {
@@ -1183,6 +1244,12 @@ sup:hover {
     margin-top: 200px;
   }
 }
+@media (max-width: 320px) {
+  .sc-wireless .sub-content {
+    max-width: 280px;
+    padding: 0;
+  }
+}
 .sc-wireless .sub-content img {
   margin: 0 auto;
 }
@@ -1212,7 +1279,7 @@ sup:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 30px auto;
+    margin: 30px 0;
     margin-bottom: -200px;
   }
 }
@@ -1314,6 +1381,11 @@ sup:hover {
     margin-top: 0;
   }
 }
+@media (max-width: 320px) {
+  .sc-performance .sub-content .image-wrap .image-left {
+    margin-left: 0;
+  }
+}
 .sc-performance .sub-content .image-wrap .image-right {
   background-image: url(../images/performance_right.jpg);
   background-repeat: no-repeat;
@@ -1338,6 +1410,11 @@ sup:hover {
     background-size: 138px 353px;
     width: 138px;
     height: 353px;
+  }
+}
+@media (max-width: 320px) {
+  .sc-performance .sub-content .image-wrap .image-right {
+    margin-right: 0;
   }
 }
 .sc-performance .sub-content .image-wrap .image-caption {
@@ -1378,6 +1455,11 @@ sup:hover {
     top: 0;
     right: 0;
     margin-top: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .sc-performance .sub-content .image-wrap .image-caption .left-caption, .sc-performance .sub-content .image-wrap .image-caption .right-caption {
+    min-width: 280px;
   }
 }
 .sc-performance .sub-content .image-wrap .image-caption .left-caption {
@@ -1429,6 +1511,15 @@ sup:hover {
 @media (max-width: 734px) {
   .sc-battery .func-list {
     max-width: 400px;
+  }
+}
+@media (max-width: 320px) {
+  .sc-battery .func-list {
+    max-width: 280px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
   }
 }
 .sc-battery .func-list .func-item {
@@ -1562,6 +1653,12 @@ sup:hover {
     padding: 60px;
   }
 }
+@media (max-width: 320px) {
+  .sc-design .main-content {
+    padding: 60px 0;
+    margin: 0;
+  }
+}
 .sc-design .main-content .inner {
   display: flex;
   justify-content: center;
@@ -1651,6 +1748,11 @@ sup:hover {
 @media (max-width: 734px) {
   .sc-music .main-content {
     padding-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .sc-music .main-content {
+    margin: 0;
   }
 }
 .sc-music .main-content .inner {

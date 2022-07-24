@@ -193,11 +193,16 @@
             }
     
             .menu-area {
+                display: flex;
                 font-size: 11px;
                 font-weight: 400;
                 .menu-list {
                     display: flex;
                     justify-content: space-between;
+                    @include header {
+                        display: none;
+                        max-height: 400px;
+                    }
                     .menu-item {
                         margin-right: 20px;
                         opacity: .85;
@@ -207,10 +212,23 @@
                         .active:hover {
                             color: #06c;
                         }
-                        .link-buy {
-                            margin-right: -20px;
+                    }
+                }
+                .btn-toggle {
+                    display: none;
+                    @include header {
+                        display: block;
+                        cursor: pointer;
+                        font-size: 16px;
+                        margin-right: 20px;
+                        &::after {
+                            content: '+';
                         }
                     }
+                }
+                .link-buy {
+                    font-size: 12px;
+                    margin: 12px 0 14px;
                 }
             }
         }

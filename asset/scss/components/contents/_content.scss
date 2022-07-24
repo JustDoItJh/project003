@@ -24,12 +24,20 @@
             text-align: left;
             margin: 0 36px;
         }
+        @include iphone {
+            max-width: 280px;
+            margin: 0 20px;
+        }
     }
     .sc-performance &, .sc-charge &, .sc-battery &, .sc-connect &, .sc-share & {
         @include mobile {
             max-width: 625px;
             text-align: left;
             margin: 0 36px;
+        }
+        @include iphone {
+            max-width: 280px;
+            margin: 0 20px;
         }
     }
     
@@ -61,6 +69,11 @@
                 line-height: 1.2;
             }
         }
+        .sc-connect & {
+            @include iphone {
+                padding-right: 100px;
+            }
+        }
     }
     .desc {
         margin: 0 auto;
@@ -87,7 +100,7 @@
                 font-size: 19px;
             }
         }
-        .sc-performance & .sc-charge & {
+        .sc-performance &, .sc-charge & {
             margin: 0 120px;
             @include mobile {
                 margin: 0;
@@ -182,6 +195,9 @@
         @include recommend {
             width: 210px;
         }
+        @include iphone {
+            width: 135px;
+        }
         .image-box {
             display: flex;
             align-items: flex-end;
@@ -201,6 +217,9 @@
             }
             @include recommend {
                 width: 210px;
+            }
+            @include iphone {
+                width: 135px;
             }
             .title {
                 font-size: 24px;
@@ -238,6 +257,9 @@
         }
         @include recommend {
             width: 210px;
+        }
+        @include iphone {
+            width: 135px;
         }
         .info-list {}
         .info-item {

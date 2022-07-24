@@ -18,9 +18,7 @@
         flex-wrap: wrap;
         justify-content: center;
         padding-bottom: 50px;
-        @include tablet {
 
-        }
         .service-item {
             margin: 0 auto;
             position: relative;
@@ -29,6 +27,9 @@
             padding-top: 50px;
             @include tablet {
                 flex-basis: 50%;
+            }
+            @include iphone {
+                flex-basis: 100%;
             }
 
             .link-service {
@@ -137,6 +138,7 @@
                 @include header {
                     margin-bottom: 0;
                     border-bottom: 1px solid #ddd;
+                    cursor: pointer;
                 }
                 .title {
                     color: #1d1d1d;
@@ -164,7 +166,9 @@
                     margin-bottom: 8px;
                     color: #424245;
                 }
-                .link-nav:hover {text-decoration: underline;}
+                .link-nav {
+                    &:hover {text-decoration: underline;}
+                }
             }
         }
     }
