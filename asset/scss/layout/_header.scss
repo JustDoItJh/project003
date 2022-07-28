@@ -3,7 +3,7 @@
     // position: fixed;
     position: sticky;
     top: 0; right: 0; left: 0;
-    z-index: 99;
+    z-index: 98;
     display: block;
     width: 100%;
     height: 44px;
@@ -18,8 +18,9 @@
     }
 
     .gnb-area {
-        background: #323232;
+        background: #000;
         width: 100%;
+        z-index: 100;
         
         .gnb-wrap {
             position: relative;
@@ -102,15 +103,18 @@
                     width: 13px; height: 44px;
                     cursor: pointer;
                     @include header {
-                        
                     }
                 }
             }
             .gnb-response {
                 display: none;
                 @include header {
+                    
                     display: block;
-                    z-index: 100;
+                    overflow-y: hidden;
+                    max-height: none;
+                    backdrop-filter: none;
+                    z-index: 99;
                     // input 중에 id가 trigger인 항목
                     input[id=trigger] {display: none;}
                     // label 중에 for가 trigger인 항목
@@ -146,18 +150,49 @@
         
                     /* 사이드바 */
                     .sidebar {
-                        width: 100vh;
-                        height: 100vh;
-                        background-color: #1d1d1f;
-                        position: fixed;
-                        top: 44px;
+                        position: absolute;
+                        top: 0;
                         left: 0;
+                        width: 100%;
+                        height: 100vh;
+                        background-color: #000;
                         top: -100vh;
-                        transition: 0.7s;
+                        transition: 0.7s opacity 0.3s;
+                        
+                        .search-area {
+                            position: relative;
+                            max-width: 584px;
+                            margin: 30px auto;
+                            height: 36px;
+                            background: #6e6e73;
+                            opacity: 0.3;
+                            border-radius: 10px;
+                        }
+                        &>.gnb-list {
+                            display: flex;
+                            flex-direction: column;
+                            max-width: 584px;
+                            margin: 0 auto;
+                            border-top: 1px solid #fff;
+                            
+
+                            .gnb-item {
+                                .link-gnb {
+                                    font-size: 17px;
+                                    &::before {
+                                        content: '';
+                                        height: 1px; width: 100%;
+                                        background: #424245;
+                                        position: absolute;
+                                    }
+
+                                }
+                            }
+                        }
                     }
         
                     /* input[id=trigger]가 체크되었을 때 사이드바가 나오는 형제 인접자 */
-                    input[id=trigger]:checked ~ .sidebar { top: 44px; }
+                    input[id=trigger]:checked ~ .sidebar { top: 44px; transition: opacity 0.3s;}
         
                     /* check시 같이 밀려나가는 CSS 햄버거 메뉴 */
                     input[id=trigger]:checked + label[for=trigger] { transition: 0.3s; }
@@ -177,10 +212,11 @@
         border-bottom: 1px solid rgba(#000, .16);
         background: rgba(250, 250, 250, 0.5);
         backdrop-filter: blur(20px); // 자신이 아닌 배경에 필터효과 적용
-        z-index: 99;
+        z-index: 98;
         @include desktop {
             padding: 0 22px;
         }
+        
 
         .group-area {
             display: flex;
@@ -199,10 +235,7 @@
                 .menu-list {
                     display: flex;
                     justify-content: space-between;
-                    @include header {
-                        display: none;
-                        max-height: 400px;
-                    }
+                    @include header {display: none;}
                     .menu-item {
                         margin-right: 20px;
                         opacity: .85;
@@ -214,18 +247,7 @@
                         }
                     }
                 }
-                .btn-toggle {
-                    display: none;
-                    @include header {
-                        display: block;
-                        cursor: pointer;
-                        font-size: 16px;
-                        margin-right: 20px;
-                        &::after {
-                            content: '+';
-                        }
-                    }
-                }
+
                 .link-buy {
                     font-size: 12px;
                     margin: 12px 0 14px;

@@ -29,18 +29,22 @@ $(function(){
 
     })
 
-    // Header Lnb slide menu 
-    $('.btn-toggle').click(function(){
-        $('.menu-list').slideToggle();
-  
-        if($(this).hasClass('active')){
-            $(this).removeClass('active')
-            $('.btn-toggle::after').html('+');
+
+    // responsive Gnb menu
+    const toggle = true;
+
+    $('.btn-menu').click(function(){
+
+        if(toggle){
+            $('.sidebar').slideDown();
         } else {
-            $(this).addClass('active')
-            $('.btn-toggle::after').html('-');
+            $('.sidebar').slideUp();
         }
-    });
+
+        toggle =! toggle;
+      
+    })
+
 
 
     // Footer 아코디언 메뉴
