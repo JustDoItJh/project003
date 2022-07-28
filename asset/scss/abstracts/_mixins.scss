@@ -33,14 +33,14 @@ $header: 833px;
   }
 }
 
-/*반응형, 브라우저 크기가 767px 이하일때*/
+/*반응형, 브라우저 크기가 734px 이하일때*/
 @mixin mobile{
   @media (max-width: $mobile){
     @content;
   }
 }
 
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 734이상, 1023px 이하일때*/
 @mixin tablet{
   @media (max-width: $tablet){
     @content;

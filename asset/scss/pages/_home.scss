@@ -119,7 +119,8 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                margin: 30px 0;
+                margin: 0 auto;
+                padding-top: 30px;
                 margin-bottom: -200px;
             }
             .func-item {
@@ -167,6 +168,7 @@
     }
 
     .sub-content {
+        position: relative;
         padding: 50px 0 100px;
         .image-wrap {
             position: relative;
@@ -206,6 +208,7 @@
                     background-size: 157px 350px;
                     width: 157px; height: 350px;
                     margin-top: 0;
+                    margin-left: 0;
                 }
                 @include iphone {
                     margin-left: 0;
@@ -228,59 +231,75 @@
                     background-repeat: no-repeat;
                     background-size: 138px 353px;
                     width: 138px; height: 353px;
+                    margin-right: 0;
                 }
                 @include iphone {
                     margin-right: 0;
                 }
             }
 
-            .image-caption {
+        }
+        .image-caption {
+            position: absolute;
+            margin: 0 auto;
+            width: 950px; height: auto;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            @include desktop {
+                width: 750px;
+            }
+            @include mobile {
+                position: relative;
+                max-width: 625px;
+                width: auto;
+                margin: 0 36px;
+                top: 0; left: 0; transform: translate(0, 0);
+            }
+            @include iphone {
+                margin: 0 20px;
+            }
+            
+            .left-caption, .right-caption {
                 position: absolute;
+                text-align: left;
+                margin: 0 auto;
+                width: 230px;
+                z-index: 2;
+                @include desktop {
+                    width: 200px;
+                }
                 @include mobile {
-                    margin: 0 36px;
                     position: relative;
+                    width: auto;
+                    top: 0; left: 0;
+                    margin-top: 30px;
                 }
-                
-                .left-caption, .right-caption {
-                    position: absolute;
-                    text-align: left;
-                    top: 558px;
-                    width: 230px;
-                    z-index: 2;
-                    right: 200px;
-                    strong { font-weight: 600; }
-                    p {margin-top: 15px; line-height: 1.5; font-size: 14px;}
-                    @include desktop {
-                        width: 200px;
-                        top: 450px;
-                    }
+                @include iphone {
+                    min-width: 280px;
+                }
+                strong { font-weight: 600; }
+                p {
+                    margin-top: 15px; line-height: 1.5; font-size: 14px;
                     @include mobile {
-                        position: relative;
-                        min-width: 422px;
-                        top: 0; right: 0;
-                        margin-top: 30px;
-                    }
-                    @include iphone {
-                        min-width: 280px;
+                        
                     }
                 }
-                .left-caption {
-                    right: 200px;
-                    @include desktop {
-                        right: 150px;
-                    }
-                    @include mobile {
-                        right: 0;
-                    }
+            }
+            .left-caption {
+                left: 5%;
+                @include desktop {
+                    left: 5%;
                 }
-                .right-caption {
-                    left: 230px;
-                    @include desktop {
-                        left: 160px;
-                    }
-                    @include mobile {
-                        left: 0;
-                    }
+                @include mobile {
+                    left: 0;
+                }
+            }
+            .right-caption {
+                left: 75%;
+                @include desktop {
+                    left: 70%;
+                }
+                @include mobile {
+                    left: 0;
                 }
             }
         }

@@ -18,7 +18,6 @@ $(function(){
         performances = $('.sc-performance').offset().top;
 
 
-
         if(currScroll >= wireless) {
             $('.header').addClass('dark')
             if(currScroll >= performances) {
