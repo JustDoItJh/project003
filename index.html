@@ -83,7 +83,15 @@
                         <!-- 버튼 클릭시 나타나는 사이드바 -->
                         <div class="sidebar">
                             <div class="search-area">
-                                <a href="" class="link-search"><span class="blind">검색</span></a>
+                                <form action="" method="get">
+                                    <fieldset>
+                                        <legend class="blind">검색</legend>
+                                        <div class="search-wrap">
+                                            <button class="btn-search"><span class="blind">검색</span></button>
+                                            <input type="text" class="input-search" placeholder="apple.com 검색">
+                                        </div>
+                                    </fieldset>
+                                </form>
                             </div>
                             <ul class="gnb-list">
                                 <li class="gnb-item">
