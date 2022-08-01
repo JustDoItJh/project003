@@ -748,6 +748,7 @@ sup:hover {
   }
   .footer-inner .nav-area .nav-wrap .nav-box .title::after {
     content: "+";
+    display: block;
     float: right;
     cursor: pointer;
   }

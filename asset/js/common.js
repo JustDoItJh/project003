@@ -7,7 +7,7 @@ $(function(){
         currScroll = $(this).scrollTop();
 
         
-        if(currScroll > 0) {
+        if(currScroll >= lastScroll) {
             $('.header').addClass('hide')
         }else {
             $('.header').removeClass('hide')
